@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mulish-Bold.ttf">
+            <string>Mulish-Bold</string>
+        </array>
+        <array key="Mulish-Regular.ttf">
+            <string>Mulish-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="KGk-i7-Jjw" customClass="PopularTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venom Let There Be Carnagedjkjkd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2J-m4-TYh">
+                        <rect key="frame" x="117" y="24.999999999999996" width="188" height="37.666666666666657"/>
+                        <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie4" translatesAutoresizingMaskIntoConstraints="NO" id="XL5-HE-miV">
+                        <rect key="frame" x="0.0" y="25" width="94" height="131"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="2Mc-66-xeW"/>
+                            <constraint firstAttribute="height" constant="131" id="HIJ-lE-nEH"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06D-tQ-XcE">
+                        <rect key="frame" x="117" y="136.33333333333334" width="70" height="12.333333333333343"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BeJ-Fq-vQt">
+                                <rect key="frame" x="0.0" y="0.99999999999999822" width="12" height="11.000000000000002"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12.33" id="JLn-VW-5qM"/>
+                                    <constraint firstAttribute="width" constant="12" id="Jaa-w4-74o"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 47m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-RA-0w0">
+                                <rect key="frame" x="17" y="0.0" width="53" height="12.333333333333334"/>
+                                <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BLT-RA-0w0" secondAttribute="bottom" id="42T-7S-Ksu"/>
+                            <constraint firstAttribute="bottom" secondItem="BeJ-Fq-vQt" secondAttribute="bottom" id="ErB-WZ-7J4"/>
+                            <constraint firstItem="BLT-RA-0w0" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="Gbt-ch-3SY"/>
+                            <constraint firstItem="BeJ-Fq-vQt" firstAttribute="leading" secondItem="06D-tQ-XcE" secondAttribute="leading" id="gh2-eP-5TT"/>
+                            <constraint firstItem="BeJ-Fq-vQt" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="gx8-Kz-9TN"/>
+                            <constraint firstAttribute="trailing" secondItem="BLT-RA-0w0" secondAttribute="trailing" id="lHi-Oy-Sx8"/>
+                            <constraint firstItem="BLT-RA-0w0" firstAttribute="leading" secondItem="BeJ-Fq-vQt" secondAttribute="trailing" constant="5" id="tmP-SS-tKX"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-Fq-2Jd">
+                        <rect key="frame" x="118" y="72.666666666666671" width="108.33333333333331" height="12"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="qP3-Mk-IOH">
+                                <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="WcO-Rv-vMi"/>
+                                    <constraint firstAttribute="width" constant="12" id="h77-OM-3dD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.5/10 IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6R-Gg-UCK">
+                                <rect key="frame" x="18" y="0.0" width="90.333333333333329" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="mTq-De-EWu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="v6R-Gg-UCK" firstAttribute="leading" secondItem="qP3-Mk-IOH" secondAttribute="trailing" constant="6" id="JiJ-uW-zZc"/>
+                            <constraint firstItem="qP3-Mk-IOH" firstAttribute="leading" secondItem="y0h-Fq-2Jd" secondAttribute="leading" id="bpq-Bw-sR9"/>
+                            <constraint firstItem="qP3-Mk-IOH" firstAttribute="top" secondItem="y0h-Fq-2Jd" secondAttribute="top" id="c23-7c-akZ"/>
+                            <constraint firstItem="v6R-Gg-UCK" firstAttribute="top" secondItem="y0h-Fq-2Jd" secondAttribute="top" id="eK4-yu-fv6"/>
+                            <constraint firstAttribute="bottom" secondItem="qP3-Mk-IOH" secondAttribute="bottom" id="jw4-fh-8uT"/>
+                            <constraint firstAttribute="bottom" secondItem="v6R-Gg-UCK" secondAttribute="bottom" id="ycA-Jq-NnB"/>
+                        </constraints>
+                    </stackView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HORROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-Sm-xDp">
+                        <rect key="frame" x="118" y="103" width="57" height="16.333333333333329"/>
+                        <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Okn-Sm-xDp" secondAttribute="trailing" constant="129" id="3lz-ar-1Vw"/>
+                    <constraint firstItem="Okn-Sm-xDp" firstAttribute="top" secondItem="y0h-Fq-2Jd" secondAttribute="bottom" constant="18.329999999999998" id="A1h-UV-YPL"/>
+                    <constraint firstItem="XL5-HE-miV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="ODP-ai-78U"/>
+                    <constraint firstAttribute="bottom" secondItem="XL5-HE-miV" secondAttribute="bottom" constant="24" id="OlC-Zj-2Gx"/>
+                    <constraint firstItem="06D-tQ-XcE" firstAttribute="top" secondItem="Okn-Sm-xDp" secondAttribute="bottom" constant="17" id="Ras-gI-2ip"/>
+                    <constraint firstItem="y0h-Fq-2Jd" firstAttribute="top" secondItem="p2J-m4-TYh" secondAttribute="bottom" constant="10" id="ZDt-Sg-Pl4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="06D-tQ-XcE" secondAttribute="trailing" constant="117" id="bBw-Vs-fgH"/>
+                    <constraint firstItem="p2J-m4-TYh" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="gf7-3h-N1y"/>
+                    <constraint firstItem="XL5-HE-miV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gy0-1e-Vx5"/>
+                    <constraint firstItem="y0h-Fq-2Jd" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="24" id="i8B-Ua-UXc"/>
+                    <constraint firstItem="06D-tQ-XcE" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="k4i-dL-EFD"/>
+                    <constraint firstItem="p2J-m4-TYh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="oWw-ZN-3m8"/>
+                    <constraint firstAttribute="trailing" secondItem="p2J-m4-TYh" secondAttribute="trailing" constant="15" id="qIP-pY-LUa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="y0h-Fq-2Jd" secondAttribute="trailing" constant="77.670000000000002" id="qRq-ql-t7W"/>
+                    <constraint firstItem="06D-tQ-XcE" firstAttribute="top" secondItem="Okn-Sm-xDp" secondAttribute="bottom" constant="17" id="r5Q-MN-ZUq"/>
+                    <constraint firstItem="Okn-Sm-xDp" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="24" id="rrO-IS-XrI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="genreLabel" destination="Okn-Sm-xDp" id="KlR-GT-xbK"/>
+                <outlet property="movieImageView" destination="XL5-HE-miV" id="pGK-vh-pqy"/>
+                <outlet property="movieTitleLabel" destination="p2J-m4-TYh" id="nrh-Zn-1qa"/>
+                <outlet property="ratingLabel" destination="v6R-Gg-UCK" id="IDZ-YC-97Q"/>
+                <outlet property="timeLabel" destination="BLT-RA-0w0" id="XRi-7T-6Ri"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="67.605633802816911"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="movie4" width="85" height="120"/>
+        <image name="star" width="12" height="11.333333015441895"/>
+        <image name="timer" catalog="system" width="128" height="123"/>
+    </resources>
+</document>

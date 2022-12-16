@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "youtubeplayer-in-wkwebview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmhv/YoutubePlayer-in-WKWebView",
+      "state" : {
+        "revision" : "970bf5f089171c78622633e9112e9d8730ace758",
+        "version" : "0.3.8"
+      }
+    }
+  ],
+  "version" : 2
+}

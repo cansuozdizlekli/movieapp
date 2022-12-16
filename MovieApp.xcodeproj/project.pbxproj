@@ -9,23 +9,156 @@
 /* Begin PBXBuildFile section */
 		8D88DBA22944A25C00D29867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA12944A25C00D29867 /* AppDelegate.swift */; };
 		8D88DBA42944A25C00D29867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA32944A25C00D29867 /* SceneDelegate.swift */; };
-		8D88DBA62944A25C00D29867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA52944A25C00D29867 /* ViewController.swift */; };
 		8D88DBA92944A25C00D29867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBA72944A25C00D29867 /* Main.storyboard */; };
 		8D88DBAC2944A25C00D29867 /* MovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBAA2944A25C00D29867 /* MovieApp.xcdatamodeld */; };
 		8D88DBAE2944A25E00D29867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBAD2944A25E00D29867 /* Assets.xcassets */; };
 		8D88DBB12944A25E00D29867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBAF2944A25E00D29867 /* LaunchScreen.storyboard */; };
+		8D88DBC02944A66B00D29867 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBBF2944A66B00D29867 /* TabBarController.swift */; };
+		8D88DBCD2944AC3700D29867 /* FavouriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBCB2944AC3700D29867 /* FavouriteVC.swift */; };
+		8D88DBCE2944AC3700D29867 /* FavouriteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBCC2944AC3700D29867 /* FavouriteVC.xib */; };
+		8D88DBD22944BD0B00D29867 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBD02944BD0B00D29867 /* SettingsVC.swift */; };
+		8D88DBD32944BD0B00D29867 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBD12944BD0B00D29867 /* SettingsVC.xib */; };
+		8D88DBD62944C09100D29867 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBD52944C09100D29867 /* Icon.swift */; };
+		8D88DBDF2944DD0400D29867 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBDE2944DD0400D29867 /* ContainerVC.swift */; };
+		8D88DBE22944DD9E00D29867 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBE02944DD9E00D29867 /* SideMenuVC.swift */; };
+		8D88DBE32944DD9E00D29867 /* SideMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBE12944DD9E00D29867 /* SideMenuVC.xib */; };
+		8DB7ED352944E5A400C5B8EA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED342944E5A400C5B8EA /* Constant.swift */; };
+		8DB7ED392945FD2100C5B8EA /* MovieTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED372945FD2100C5B8EA /* MovieTypeTableViewCell.swift */; };
+		8DB7ED3A2945FD2100C5B8EA /* MovieTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB7ED382945FD2100C5B8EA /* MovieTypeTableViewCell.xib */; };
+		8DB7ED3D2946071800C5B8EA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED3C2946071800C5B8EA /* API.swift */; };
+		8DB7ED3F29460A7000C5B8EA /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED3E29460A7000C5B8EA /* Genres.swift */; };
+		8DB7ED4129460EF400C5B8EA /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED4029460EF400C5B8EA /* MovieModel.swift */; };
+		8DB7ED432946111200C5B8EA /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED422946111100C5B8EA /* UIColor+Ext.swift */; };
+		8DB7ED45294611BF00C5B8EA /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7ED44294611BF00C5B8EA /* UIView+Ext.swift */; };
+		8DD73766294CAA7C0044DB54 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD73764294CAA7C0044DB54 /* MovieDetailViewController.swift */; };
+		8DD73767294CAA7C0044DB54 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD73765294CAA7C0044DB54 /* MovieDetailViewController.xib */; };
+		8DD7376A294CBD130044DB54 /* YoutubePlayer-in-WKWebView in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD73769294CBD130044DB54 /* YoutubePlayer-in-WKWebView */; };
+		8DD7AD8629466AED00B03570 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7AD8429466AED00B03570 /* HomeViewController.swift */; };
+		8DD7AD8729466AED00B03570 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AD8529466AED00B03570 /* HomeViewController.xib */; };
+		8DD7AD902947610800B03570 /* NowShowingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7AD8E2947610800B03570 /* NowShowingCollectionViewCell.swift */; };
+		8DD7ADC92947C7CB00B03570 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADB72947C7CA00B03570 /* Montserrat-BoldItalic.ttf */; };
+		8DD7ADCA2947C7CB00B03570 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADB82947C7CA00B03570 /* Montserrat-Black.ttf */; };
+		8DD7ADCB2947C7CB00B03570 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADB92947C7CA00B03570 /* Montserrat-Thin.ttf */; };
+		8DD7ADCC2947C7CB00B03570 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBA2947C7CA00B03570 /* Montserrat-SemiBold.ttf */; };
+		8DD7ADCD2947C7CB00B03570 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBB2947C7CA00B03570 /* Montserrat-ExtraLightItalic.ttf */; };
+		8DD7ADCE2947C7CB00B03570 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBC2947C7CA00B03570 /* Montserrat-SemiBoldItalic.ttf */; };
+		8DD7ADCF2947C7CB00B03570 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBD2947C7CA00B03570 /* Montserrat-Italic.ttf */; };
+		8DD7ADD02947C7CB00B03570 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBE2947C7CB00B03570 /* Montserrat-Regular.ttf */; };
+		8DD7ADD12947C7CB00B03570 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADBF2947C7CB00B03570 /* Montserrat-ExtraBoldItalic.ttf */; };
+		8DD7ADD22947C7CB00B03570 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC02947C7CB00B03570 /* Montserrat-MediumItalic.ttf */; };
+		8DD7ADD32947C7CB00B03570 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC12947C7CB00B03570 /* Montserrat-Medium.ttf */; };
+		8DD7ADD42947C7CB00B03570 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC22947C7CB00B03570 /* Montserrat-Light.ttf */; };
+		8DD7ADD52947C7CB00B03570 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC32947C7CB00B03570 /* Montserrat-ThinItalic.ttf */; };
+		8DD7ADD62947C7CB00B03570 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC42947C7CB00B03570 /* Montserrat-Bold.ttf */; };
+		8DD7ADD72947C7CB00B03570 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC52947C7CB00B03570 /* Montserrat-ExtraBold.ttf */; };
+		8DD7ADD82947C7CB00B03570 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC62947C7CB00B03570 /* Montserrat-ExtraLight.ttf */; };
+		8DD7ADD92947C7CB00B03570 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC72947C7CB00B03570 /* Montserrat-LightItalic.ttf */; };
+		8DD7ADDA2947C7CB00B03570 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADC82947C7CB00B03570 /* Montserrat-BlackItalic.ttf */; };
+		8DD7ADED2947DA5700B03570 /* Mulish-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADDD2947DA5600B03570 /* Mulish-ExtraBold.ttf */; };
+		8DD7ADEE2947DA5700B03570 /* Mulish-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADDE2947DA5600B03570 /* Mulish-SemiBoldItalic.ttf */; };
+		8DD7ADEF2947DA5700B03570 /* Mulish-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADDF2947DA5600B03570 /* Mulish-Medium.ttf */; };
+		8DD7ADF02947DA5700B03570 /* Mulish-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE02947DA5600B03570 /* Mulish-Light.ttf */; };
+		8DD7ADF12947DA5700B03570 /* Mulish-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE12947DA5600B03570 /* Mulish-BlackItalic.ttf */; };
+		8DD7ADF22947DA5700B03570 /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE22947DA5600B03570 /* Mulish-Bold.ttf */; };
+		8DD7ADF32947DA5700B03570 /* Mulish-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE32947DA5600B03570 /* Mulish-LightItalic.ttf */; };
+		8DD7ADF42947DA5700B03570 /* Mulish-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE42947DA5600B03570 /* Mulish-ExtraLightItalic.ttf */; };
+		8DD7ADF52947DA5700B03570 /* Mulish-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE52947DA5600B03570 /* Mulish-BoldItalic.ttf */; };
+		8DD7ADF62947DA5700B03570 /* Mulish-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE62947DA5600B03570 /* Mulish-MediumItalic.ttf */; };
+		8DD7ADF72947DA5700B03570 /* Mulish-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE72947DA5600B03570 /* Mulish-Black.ttf */; };
+		8DD7ADF82947DA5700B03570 /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE82947DA5700B03570 /* Mulish-SemiBold.ttf */; };
+		8DD7ADF92947DA5700B03570 /* Mulish-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADE92947DA5700B03570 /* Mulish-ExtraBoldItalic.ttf */; };
+		8DD7ADFA2947DA5700B03570 /* Mulish-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADEA2947DA5700B03570 /* Mulish-Italic.ttf */; };
+		8DD7ADFB2947DA5700B03570 /* Mulish-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADEB2947DA5700B03570 /* Mulish-ExtraLight.ttf */; };
+		8DD7ADFC2947DA5700B03570 /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADEC2947DA5700B03570 /* Mulish-Regular.ttf */; };
+		8DD7AE052947DAC500B03570 /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADFD2947DAC400B03570 /* Merriweather-Black.ttf */; };
+		8DD7AE062947DAC500B03570 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADFE2947DAC400B03570 /* Merriweather-Regular.ttf */; };
+		8DD7AE072947DAC500B03570 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7ADFF2947DAC500B03570 /* Merriweather-Light.ttf */; };
+		8DD7AE082947DAC500B03570 /* Merriweather-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE002947DAC500B03570 /* Merriweather-LightItalic.ttf */; };
+		8DD7AE092947DAC500B03570 /* Merriweather-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE012947DAC500B03570 /* Merriweather-Italic.ttf */; };
+		8DD7AE0A2947DAC500B03570 /* Merriweather-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE022947DAC500B03570 /* Merriweather-BoldItalic.ttf */; };
+		8DD7AE0B2947DAC500B03570 /* Merriweather-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE032947DAC500B03570 /* Merriweather-BlackItalic.ttf */; };
+		8DD7AE0C2947DAC500B03570 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE042947DAC500B03570 /* Merriweather-Bold.ttf */; };
+		8DD7AE0E2948A5BE00B03570 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7AE0D2948A5BE00B03570 /* UILabel+Ext.swift */; };
+		8DD7AE172949092200B03570 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7AE152949092200B03570 /* PopularTableViewCell.swift */; };
+		8DD7AE182949092200B03570 /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD7AE162949092200B03570 /* PopularTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D88DB9E2944A25C00D29867 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D88DBA12944A25C00D29867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D88DBA32944A25C00D29867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D88DBA52944A25C00D29867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D88DBA82944A25C00D29867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D88DBAB2944A25C00D29867 /* MovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieApp.xcdatamodel; sourceTree = "<group>"; };
 		8D88DBAD2944A25E00D29867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D88DBB02944A25E00D29867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D88DBB22944A25E00D29867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D88DBBF2944A66B00D29867 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8D88DBCB2944AC3700D29867 /* FavouriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
+		8D88DBCC2944AC3700D29867 /* FavouriteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteVC.xib; sourceTree = "<group>"; };
+		8D88DBD02944BD0B00D29867 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		8D88DBD12944BD0B00D29867 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		8D88DBD52944C09100D29867 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		8D88DBDE2944DD0400D29867 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		8D88DBE02944DD9E00D29867 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		8D88DBE12944DD9E00D29867 /* SideMenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuVC.xib; sourceTree = "<group>"; };
+		8DB7ED342944E5A400C5B8EA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		8DB7ED372945FD2100C5B8EA /* MovieTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTypeTableViewCell.swift; sourceTree = "<group>"; };
+		8DB7ED382945FD2100C5B8EA /* MovieTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTypeTableViewCell.xib; sourceTree = "<group>"; };
+		8DB7ED3C2946071800C5B8EA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8DB7ED3E29460A7000C5B8EA /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
+		8DB7ED4029460EF400C5B8EA /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		8DB7ED422946111100C5B8EA /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		8DB7ED44294611BF00C5B8EA /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		8DD73764294CAA7C0044DB54 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		8DD73765294CAA7C0044DB54 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		8DD7AD8429466AED00B03570 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8DD7AD8529466AED00B03570 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8DD7AD8E2947610800B03570 /* NowShowingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowShowingCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DD7ADB72947C7CA00B03570 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADB82947C7CA00B03570 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		8DD7ADB92947C7CA00B03570 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		8DD7ADBA2947C7CA00B03570 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		8DD7ADBB2947C7CA00B03570 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADBC2947C7CA00B03570 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADBD2947C7CA00B03570 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		8DD7ADBE2947C7CB00B03570 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		8DD7ADBF2947C7CB00B03570 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADC02947C7CB00B03570 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADC12947C7CB00B03570 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		8DD7ADC22947C7CB00B03570 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		8DD7ADC32947C7CB00B03570 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADC42947C7CB00B03570 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		8DD7ADC52947C7CB00B03570 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8DD7ADC62947C7CB00B03570 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8DD7ADC72947C7CB00B03570 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADC82947C7CB00B03570 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADDD2947DA5600B03570 /* Mulish-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8DD7ADDE2947DA5600B03570 /* Mulish-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADDF2947DA5600B03570 /* Mulish-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Medium.ttf"; sourceTree = "<group>"; };
+		8DD7ADE02947DA5600B03570 /* Mulish-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Light.ttf"; sourceTree = "<group>"; };
+		8DD7ADE12947DA5600B03570 /* Mulish-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-BlackItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADE22947DA5600B03570 /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
+		8DD7ADE32947DA5600B03570 /* Mulish-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-LightItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADE42947DA5600B03570 /* Mulish-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADE52947DA5600B03570 /* Mulish-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADE62947DA5600B03570 /* Mulish-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-MediumItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADE72947DA5600B03570 /* Mulish-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Black.ttf"; sourceTree = "<group>"; };
+		8DD7ADE82947DA5700B03570 /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
+		8DD7ADE92947DA5700B03570 /* Mulish-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7ADEA2947DA5700B03570 /* Mulish-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Italic.ttf"; sourceTree = "<group>"; };
+		8DD7ADEB2947DA5700B03570 /* Mulish-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8DD7ADEC2947DA5700B03570 /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
+		8DD7ADFD2947DAC400B03570 /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		8DD7ADFE2947DAC400B03570 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		8DD7ADFF2947DAC500B03570 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		8DD7AE002947DAC500B03570 /* Merriweather-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-LightItalic.ttf"; sourceTree = "<group>"; };
+		8DD7AE012947DAC500B03570 /* Merriweather-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Italic.ttf"; sourceTree = "<group>"; };
+		8DD7AE022947DAC500B03570 /* Merriweather-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8DD7AE032947DAC500B03570 /* Merriweather-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-BlackItalic.ttf"; sourceTree = "<group>"; };
+		8DD7AE042947DAC500B03570 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		8DD7AE0D2948A5BE00B03570 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		8DD7AE152949092200B03570 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		8DD7AE162949092200B03570 /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD7376A294CBD130044DB54 /* YoutubePlayer-in-WKWebView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +192,284 @@
 		8D88DBA02944A25C00D29867 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				8D88DBA12944A25C00D29867 /* AppDelegate.swift */,
-				8D88DBA32944A25C00D29867 /* SceneDelegate.swift */,
-				8D88DBA52944A25C00D29867 /* ViewController.swift */,
-				8D88DBA72944A25C00D29867 /* Main.storyboard */,
-				8D88DBAD2944A25E00D29867 /* Assets.xcassets */,
-				8D88DBAF2944A25E00D29867 /* LaunchScreen.storyboard */,
-				8D88DBB22944A25E00D29867 /* Info.plist */,
+				8D88DBB82944A2B300D29867 /* System */,
+				8D88DBC52944AA6500D29867 /* Model */,
+				8D88DBB92944A2E200D29867 /* Scenes */,
+				8D88DBC72944AB0300D29867 /* Service */,
+				8D88DBC62944AA7100D29867 /* Resources */,
+				8D88DBC12944AA1C00D29867 /* Helper */,
+				8D88DBC82944AB2600D29867 /* CoreData */,
 				8D88DBAA2944A25C00D29867 /* MovieApp.xcdatamodeld */,
 			);
 			path = MovieApp;
+			sourceTree = "<group>";
+		};
+		8D88DBB82944A2B300D29867 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBA12944A25C00D29867 /* AppDelegate.swift */,
+				8D88DBA32944A25C00D29867 /* SceneDelegate.swift */,
+				8D88DBAD2944A25E00D29867 /* Assets.xcassets */,
+				8D88DBA72944A25C00D29867 /* Main.storyboard */,
+				8D88DBAF2944A25E00D29867 /* LaunchScreen.storyboard */,
+				8D88DBB22944A25E00D29867 /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		8D88DBB92944A2E200D29867 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBBF2944A66B00D29867 /* TabBarController.swift */,
+				8DD7AD8829466CB600B03570 /* Container */,
+				8D88DBCA2944ABF000D29867 /* Favourite */,
+				8D88DBCF2944BCEC00D29867 /* Settings */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8D88DBBE2944A3E000D29867 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8DD73763294CAA460044DB54 /* MovieDetail */,
+				8DD7AD8429466AED00B03570 /* HomeViewController.swift */,
+				8DD7AD8529466AED00B03570 /* HomeViewController.xib */,
+				8DD7AD8929466D1900B03570 /* NowShowingCell */,
+				8DD7AE0F2949011600B03570 /* PopularCell */,
+			);
+			name = Home;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8D88DBC12944AA1C00D29867 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBC22944AA2700D29867 /* Constants */,
+				8D88DBC32944AA3500D29867 /* Extentions */,
+				8D88DBC42944AA4100D29867 /* Enums */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8D88DBC22944AA2700D29867 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED342944E5A400C5B8EA /* Constant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8D88DBC32944AA3500D29867 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED422946111100C5B8EA /* UIColor+Ext.swift */,
+				8DB7ED44294611BF00C5B8EA /* UIView+Ext.swift */,
+				8DD7AE0D2948A5BE00B03570 /* UILabel+Ext.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		8D88DBC42944AA4100D29867 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBD42944C07700D29867 /* Icon */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8D88DBC52944AA6500D29867 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED4029460EF400C5B8EA /* MovieModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D88DBC62944AA7100D29867 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7ADA72947C53100B03570 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D88DBC72944AB0300D29867 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED3B294606F900C5B8EA /* Network Service */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8D88DBC82944AB2600D29867 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8D88DBCA2944ABF000D29867 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBCB2944AC3700D29867 /* FavouriteVC.swift */,
+				8D88DBCC2944AC3700D29867 /* FavouriteVC.xib */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		8D88DBCF2944BCEC00D29867 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBD02944BD0B00D29867 /* SettingsVC.swift */,
+				8D88DBD12944BD0B00D29867 /* SettingsVC.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8D88DBD42944C07700D29867 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBD52944C09100D29867 /* Icon.swift */,
+				8DB7ED3E29460A7000C5B8EA /* Genres.swift */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
+		8D88DBD72944D87800D29867 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED362945FBE900C5B8EA /* Cell */,
+				8D88DBE02944DD9E00D29867 /* SideMenuVC.swift */,
+				8D88DBE12944DD9E00D29867 /* SideMenuVC.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		8DB7ED362945FBE900C5B8EA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED372945FD2100C5B8EA /* MovieTypeTableViewCell.swift */,
+				8DB7ED382945FD2100C5B8EA /* MovieTypeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8DB7ED3B294606F900C5B8EA /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				8DB7ED3C2946071800C5B8EA /* API.swift */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		8DD73763294CAA460044DB54 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8DD73764294CAA7C0044DB54 /* MovieDetailViewController.swift */,
+				8DD73765294CAA7C0044DB54 /* MovieDetailViewController.xib */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		8DD7AD8829466CB600B03570 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				8D88DBDE2944DD0400D29867 /* ContainerVC.swift */,
+				8D88DBBE2944A3E000D29867 /* Home */,
+				8D88DBD72944D87800D29867 /* SideMenu */,
+			);
+			name = Container;
+			path = Home/Container;
+			sourceTree = "<group>";
+		};
+		8DD7AD8929466D1900B03570 /* NowShowingCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7AD8E2947610800B03570 /* NowShowingCollectionViewCell.swift */,
+			);
+			path = NowShowingCell;
+			sourceTree = "<group>";
+		};
+		8DD7ADA72947C53100B03570 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7ADDC2947DA2900B03570 /* Mulish  */,
+				8DD7ADDB2947DA0D00B03570 /* Merriweather */,
+				8DD7ADB62947C7B500B03570 /* Mont */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8DD7ADB62947C7B500B03570 /* Mont */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7ADB82947C7CA00B03570 /* Montserrat-Black.ttf */,
+				8DD7ADC82947C7CB00B03570 /* Montserrat-BlackItalic.ttf */,
+				8DD7ADC42947C7CB00B03570 /* Montserrat-Bold.ttf */,
+				8DD7ADB72947C7CA00B03570 /* Montserrat-BoldItalic.ttf */,
+				8DD7ADC52947C7CB00B03570 /* Montserrat-ExtraBold.ttf */,
+				8DD7ADBF2947C7CB00B03570 /* Montserrat-ExtraBoldItalic.ttf */,
+				8DD7ADC62947C7CB00B03570 /* Montserrat-ExtraLight.ttf */,
+				8DD7ADBB2947C7CA00B03570 /* Montserrat-ExtraLightItalic.ttf */,
+				8DD7ADBD2947C7CA00B03570 /* Montserrat-Italic.ttf */,
+				8DD7ADC22947C7CB00B03570 /* Montserrat-Light.ttf */,
+				8DD7ADC72947C7CB00B03570 /* Montserrat-LightItalic.ttf */,
+				8DD7ADC12947C7CB00B03570 /* Montserrat-Medium.ttf */,
+				8DD7ADC02947C7CB00B03570 /* Montserrat-MediumItalic.ttf */,
+				8DD7ADBE2947C7CB00B03570 /* Montserrat-Regular.ttf */,
+				8DD7ADBA2947C7CA00B03570 /* Montserrat-SemiBold.ttf */,
+				8DD7ADBC2947C7CA00B03570 /* Montserrat-SemiBoldItalic.ttf */,
+				8DD7ADB92947C7CA00B03570 /* Montserrat-Thin.ttf */,
+				8DD7ADC32947C7CB00B03570 /* Montserrat-ThinItalic.ttf */,
+			);
+			path = Mont;
+			sourceTree = "<group>";
+		};
+		8DD7ADDB2947DA0D00B03570 /* Merriweather */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7ADFD2947DAC400B03570 /* Merriweather-Black.ttf */,
+				8DD7AE032947DAC500B03570 /* Merriweather-BlackItalic.ttf */,
+				8DD7AE042947DAC500B03570 /* Merriweather-Bold.ttf */,
+				8DD7AE022947DAC500B03570 /* Merriweather-BoldItalic.ttf */,
+				8DD7AE012947DAC500B03570 /* Merriweather-Italic.ttf */,
+				8DD7ADFF2947DAC500B03570 /* Merriweather-Light.ttf */,
+				8DD7AE002947DAC500B03570 /* Merriweather-LightItalic.ttf */,
+				8DD7ADFE2947DAC400B03570 /* Merriweather-Regular.ttf */,
+			);
+			path = Merriweather;
+			sourceTree = "<group>";
+		};
+		8DD7ADDC2947DA2900B03570 /* Mulish  */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7ADE72947DA5600B03570 /* Mulish-Black.ttf */,
+				8DD7ADE12947DA5600B03570 /* Mulish-BlackItalic.ttf */,
+				8DD7ADE22947DA5600B03570 /* Mulish-Bold.ttf */,
+				8DD7ADE52947DA5600B03570 /* Mulish-BoldItalic.ttf */,
+				8DD7ADDD2947DA5600B03570 /* Mulish-ExtraBold.ttf */,
+				8DD7ADE92947DA5700B03570 /* Mulish-ExtraBoldItalic.ttf */,
+				8DD7ADEB2947DA5700B03570 /* Mulish-ExtraLight.ttf */,
+				8DD7ADE42947DA5600B03570 /* Mulish-ExtraLightItalic.ttf */,
+				8DD7ADEA2947DA5700B03570 /* Mulish-Italic.ttf */,
+				8DD7ADE02947DA5600B03570 /* Mulish-Light.ttf */,
+				8DD7ADE32947DA5600B03570 /* Mulish-LightItalic.ttf */,
+				8DD7ADDF2947DA5600B03570 /* Mulish-Medium.ttf */,
+				8DD7ADE62947DA5600B03570 /* Mulish-MediumItalic.ttf */,
+				8DD7ADEC2947DA5700B03570 /* Mulish-Regular.ttf */,
+				8DD7ADE82947DA5700B03570 /* Mulish-SemiBold.ttf */,
+				8DD7ADDE2947DA5600B03570 /* Mulish-SemiBoldItalic.ttf */,
+			);
+			path = "Mulish ";
+			sourceTree = "<group>";
+		};
+		8DD7AE0F2949011600B03570 /* PopularCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DD7AE152949092200B03570 /* PopularTableViewCell.swift */,
+				8DD7AE162949092200B03570 /* PopularTableViewCell.xib */,
+			);
+			path = PopularCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +488,9 @@
 			dependencies = (
 			);
 			name = MovieApp;
+			packageProductDependencies = (
+				8DD73769294CBD130044DB54 /* YoutubePlayer-in-WKWebView */,
+			);
 			productName = MovieApp;
 			productReference = 8D88DB9E2944A25C00D29867 /* MovieApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +519,9 @@
 				Base,
 			);
 			mainGroup = 8D88DB952944A25C00D29867;
+			packageReferences = (
+				8DD73768294CBD130044DB54 /* XCRemoteSwiftPackageReference "YoutubePlayer-in-WKWebView" */,
+			);
 			productRefGroup = 8D88DB9F2944A25C00D29867 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,9 +536,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD7ADDA2947C7CB00B03570 /* Montserrat-BlackItalic.ttf in Resources */,
+				8DD7ADEE2947DA5700B03570 /* Mulish-SemiBoldItalic.ttf in Resources */,
+				8DD7AE092947DAC500B03570 /* Merriweather-Italic.ttf in Resources */,
+				8DD7AE082947DAC500B03570 /* Merriweather-LightItalic.ttf in Resources */,
+				8DD7ADF92947DA5700B03570 /* Mulish-ExtraBoldItalic.ttf in Resources */,
+				8DD7ADED2947DA5700B03570 /* Mulish-ExtraBold.ttf in Resources */,
+				8DD7ADD42947C7CB00B03570 /* Montserrat-Light.ttf in Resources */,
+				8DD7ADD22947C7CB00B03570 /* Montserrat-MediumItalic.ttf in Resources */,
+				8DD7ADF82947DA5700B03570 /* Mulish-SemiBold.ttf in Resources */,
+				8DD7ADD92947C7CB00B03570 /* Montserrat-LightItalic.ttf in Resources */,
+				8DD7AE0A2947DAC500B03570 /* Merriweather-BoldItalic.ttf in Resources */,
+				8DD7ADF42947DA5700B03570 /* Mulish-ExtraLightItalic.ttf in Resources */,
+				8DD7AE072947DAC500B03570 /* Merriweather-Light.ttf in Resources */,
+				8DD7ADF32947DA5700B03570 /* Mulish-LightItalic.ttf in Resources */,
+				8DD7AE182949092200B03570 /* PopularTableViewCell.xib in Resources */,
+				8DB7ED3A2945FD2100C5B8EA /* MovieTypeTableViewCell.xib in Resources */,
+				8DD7ADF02947DA5700B03570 /* Mulish-Light.ttf in Resources */,
+				8DD7AE0B2947DAC500B03570 /* Merriweather-BlackItalic.ttf in Resources */,
 				8D88DBB12944A25E00D29867 /* LaunchScreen.storyboard in Resources */,
+				8DD7ADD02947C7CB00B03570 /* Montserrat-Regular.ttf in Resources */,
+				8DD7ADCC2947C7CB00B03570 /* Montserrat-SemiBold.ttf in Resources */,
+				8DD7ADF62947DA5700B03570 /* Mulish-MediumItalic.ttf in Resources */,
+				8DD7ADF22947DA5700B03570 /* Mulish-Bold.ttf in Resources */,
+				8DD7ADCF2947C7CB00B03570 /* Montserrat-Italic.ttf in Resources */,
+				8DD7ADF12947DA5700B03570 /* Mulish-BlackItalic.ttf in Resources */,
+				8DD7ADD62947C7CB00B03570 /* Montserrat-Bold.ttf in Resources */,
+				8DD7ADD32947C7CB00B03570 /* Montserrat-Medium.ttf in Resources */,
+				8DD7ADFC2947DA5700B03570 /* Mulish-Regular.ttf in Resources */,
+				8DD7ADCE2947C7CB00B03570 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				8D88DBAE2944A25E00D29867 /* Assets.xcassets in Resources */,
+				8D88DBE32944DD9E00D29867 /* SideMenuVC.xib in Resources */,
+				8DD7ADD72947C7CB00B03570 /* Montserrat-ExtraBold.ttf in Resources */,
+				8DD7ADD12947C7CB00B03570 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				8D88DBD32944BD0B00D29867 /* SettingsVC.xib in Resources */,
+				8DD7ADFB2947DA5700B03570 /* Mulish-ExtraLight.ttf in Resources */,
 				8D88DBA92944A25C00D29867 /* Main.storyboard in Resources */,
+				8DD73767294CAA7C0044DB54 /* MovieDetailViewController.xib in Resources */,
+				8DD7ADCA2947C7CB00B03570 /* Montserrat-Black.ttf in Resources */,
+				8DD7ADEF2947DA5700B03570 /* Mulish-Medium.ttf in Resources */,
+				8DD7ADD52947C7CB00B03570 /* Montserrat-ThinItalic.ttf in Resources */,
+				8DD7ADD82947C7CB00B03570 /* Montserrat-ExtraLight.ttf in Resources */,
+				8DD7AE052947DAC500B03570 /* Merriweather-Black.ttf in Resources */,
+				8DD7ADF52947DA5700B03570 /* Mulish-BoldItalic.ttf in Resources */,
+				8DD7ADF72947DA5700B03570 /* Mulish-Black.ttf in Resources */,
+				8DD7AE0C2947DAC500B03570 /* Merriweather-Bold.ttf in Resources */,
+				8DD7ADFA2947DA5700B03570 /* Mulish-Italic.ttf in Resources */,
+				8DD7AE062947DAC500B03570 /* Merriweather-Regular.ttf in Resources */,
+				8D88DBCE2944AC3700D29867 /* FavouriteVC.xib in Resources */,
+				8DD7ADC92947C7CB00B03570 /* Montserrat-BoldItalic.ttf in Resources */,
+				8DD7ADCB2947C7CB00B03570 /* Montserrat-Thin.ttf in Resources */,
+				8DD7AD8729466AED00B03570 /* HomeViewController.xib in Resources */,
+				8DD7ADCD2947C7CB00B03570 /* Montserrat-ExtraLightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +598,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D88DBA62944A25C00D29867 /* ViewController.swift in Sources */,
+				8DB7ED45294611BF00C5B8EA /* UIView+Ext.swift in Sources */,
 				8D88DBA22944A25C00D29867 /* AppDelegate.swift in Sources */,
+				8D88DBCD2944AC3700D29867 /* FavouriteVC.swift in Sources */,
+				8DD7AE0E2948A5BE00B03570 /* UILabel+Ext.swift in Sources */,
+				8DD73766294CAA7C0044DB54 /* MovieDetailViewController.swift in Sources */,
+				8D88DBC02944A66B00D29867 /* TabBarController.swift in Sources */,
+				8DD7AD8629466AED00B03570 /* HomeViewController.swift in Sources */,
+				8DB7ED392945FD2100C5B8EA /* MovieTypeTableViewCell.swift in Sources */,
+				8DB7ED432946111200C5B8EA /* UIColor+Ext.swift in Sources */,
+				8D88DBE22944DD9E00D29867 /* SideMenuVC.swift in Sources */,
+				8D88DBDF2944DD0400D29867 /* ContainerVC.swift in Sources */,
 				8D88DBAC2944A25C00D29867 /* MovieApp.xcdatamodeld in Sources */,
+				8DD7AE172949092200B03570 /* PopularTableViewCell.swift in Sources */,
+				8DB7ED3D2946071800C5B8EA /* API.swift in Sources */,
+				8DB7ED3F29460A7000C5B8EA /* Genres.swift in Sources */,
 				8D88DBA42944A25C00D29867 /* SceneDelegate.swift in Sources */,
+				8DD7AD902947610800B03570 /* NowShowingCollectionViewCell.swift in Sources */,
+				8DB7ED352944E5A400C5B8EA /* Constant.swift in Sources */,
+				8DB7ED4129460EF400C5B8EA /* MovieModel.swift in Sources */,
+				8D88DBD62944C09100D29867 /* Icon.swift in Sources */,
+				8D88DBD22944BD0B00D29867 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +767,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2U638ZS235;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieApp/Info.plist;
+				INFOPLIST_FILE = MovieApp/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,10 +797,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2U638ZS235;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieApp/Info.plist;
+				INFOPLIST_FILE = MovieApp/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,6 +840,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DD73768294CBD130044DB54 /* XCRemoteSwiftPackageReference "YoutubePlayer-in-WKWebView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmhv/YoutubePlayer-in-WKWebView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DD73769294CBD130044DB54 /* YoutubePlayer-in-WKWebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD73768294CBD130044DB54 /* XCRemoteSwiftPackageReference "YoutubePlayer-in-WKWebView" */;
+			productName = "YoutubePlayer-in-WKWebView";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8D88DBAA2944A25C00D29867 /* MovieApp.xcdatamodeld */ = {
