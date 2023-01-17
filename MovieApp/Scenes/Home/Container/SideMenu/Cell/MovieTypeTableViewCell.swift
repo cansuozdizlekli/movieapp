@@ -33,8 +33,11 @@ class MovieTypeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // seçili türü kaydet ki tıklayınca o film tipindeki filmleri göstersin
+        UserDefaults.standard.set(movieGenreLabel.text, forKey: "movieGenre")
+        print(movieGenreLabel.text!)
+        
+        
     }
     
 }

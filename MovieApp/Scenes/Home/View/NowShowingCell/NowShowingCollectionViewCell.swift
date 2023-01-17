@@ -9,7 +9,7 @@ import UIKit
 
 class NowShowingCollectionViewCell: UICollectionViewCell {
     
-    var cellItem: NowShowingMovie!
+    var cellItem: Movie!
 
     private let movieImage: UIImageView = {
         let movieImage = UIImageView(frame: CGRect(x: 0, y: 45, width: 130, height: 190))

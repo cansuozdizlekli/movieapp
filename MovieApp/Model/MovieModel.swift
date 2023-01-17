@@ -8,21 +8,23 @@
 import Foundation
 import UIKit
 
-protocol Movie{
+struct Movie{
 //    var genre: String { get }
-    var movieImage: UIImage { get }
-    var movieTitle: String { get }
-    var ratingTitle : String { get }
-    var genres : [Genres] { get }
-    var movieTime : String { get }
-    var videoId : String { get }
+    var movieTitle: String
+    var movieImage: UIImage
+    var ratingTitle : String
+    var genres : [Genres]
+    var movieTime : String
+    var videoId : String
+    var language : String
+    var rating : String
+    var description : String
+    var casts : [Cast]
 }
 
-extension Movie {
-
-    static func parseVehicleFields(jsonDict: [String:Any]) -> (String, String) {
-        let model = jsonDict["model"] as! String
-        let color = jsonDict["color"] as! String
-        return (model, color)
-    }
+struct Cast {
+    var castImage : UIImage
+    var castName : String
 }
+
+

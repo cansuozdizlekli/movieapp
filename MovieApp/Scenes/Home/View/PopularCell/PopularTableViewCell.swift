@@ -15,7 +15,7 @@ class PopularTableViewCell: UITableViewCell {
     
 //    var cellItem: PopularMovie!
     
-    var cellItem: PopularMovie! {
+    var cellItem: Movie! {
         didSet {
             self.movieImageView.image = cellItem?.movieImage
             self.movieTitleLabel.text = cellItem?.movieTitle
@@ -66,11 +66,6 @@ class PopularTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
 
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()

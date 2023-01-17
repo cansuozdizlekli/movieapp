@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Merriweather-Black.ttf">
+            <string>Merriweather-Black</string>
+        </array>
+        <array key="Mulish-Bold.ttf">
+            <string>Mulish-Bold</string>
+        </array>
+        <array key="Mulish-Regular.ttf">
+            <string>Mulish-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailViewController" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="castCollectionView" destination="LPt-i3-kIa" id="JD1-YW-WzT"/>
+                <outlet property="descriptionLabel" destination="atW-PO-DCv" id="qqQ-7o-Ewj"/>
+                <outlet property="detailView" destination="mtF-Ua-Me0" id="8Eh-p6-VDf"/>
+                <outlet property="languageLabel" destination="wDS-mH-HcB" id="zuV-YV-v5v"/>
+                <outlet property="lengthLabel" destination="ADc-Y6-qge" id="Thz-Yx-LkO"/>
+                <outlet property="movieNameLabel" destination="O9y-xD-Qsi" id="5Lf-Qg-cIN"/>
+                <outlet property="playerView" destination="HOR-LC-kne" id="oSX-y8-bQ5"/>
+                <outlet property="ratingLabel" destination="dUV-Ah-42e" id="QUS-23-Bsp"/>
+                <outlet property="ratingTypeLabel" destination="qzZ-Sa-Kfh" id="jOI-Cz-tbX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOR-LC-kne" customClass="WKYTPlayerView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="283"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="393" id="ZCz-NX-BDx"/>
+                        <constraint firstAttribute="height" constant="283" id="ban-07-2sJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtF-Ua-Me0">
+                    <rect key="frame" x="0.0" y="274" width="393" height="578"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNt-8k-1aI">
+                            <rect key="frame" x="22" y="198" width="349" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="xU6-ap-ls2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Merriweather-Black" family="Merriweather" pointSize="16"/>
+                            <color key="textColor" name="titleBlueColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0JS-s6-520">
+                            <rect key="frame" x="339" y="32" width="22" height="19"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="1tu-j4-bQf"/>
+                                <constraint firstAttribute="height" constant="22" id="dhj-g0-zpr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-xD-Qsi">
+                            <rect key="frame" x="22" y="10" width="242" height="65"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="65" id="jHu-aT-K2X"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Mulish-Bold" family="Mulish" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OC-d0-2os">
+                            <rect key="frame" x="21" y="339" width="361" height="22.666666666666686"/>
+                            <fontDescription key="fontDescription" name="Merriweather-Black" family="Merriweather" pointSize="18"/>
+                            <color key="textColor" name="titleBlueColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="wMV-zm-U2a">
+                            <rect key="frame" x="22" y="172.33333333333331" width="349" height="16.333333333333343"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h 16m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADc-Y6-qge">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="16.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDS-mH-HcB">
+                                    <rect key="frame" x="156" y="0.0" width="43.666666666666657" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="43.666666666666657" id="9Yn-EP-MDN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PG-14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzZ-Sa-Kfh">
+                                    <rect key="frame" x="309.66666666666669" y="0.0" width="39.333333333333314" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="39.333333333333314" id="Ceu-Nk-s6h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16.329999999999998" id="FTr-Xn-Bf1"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="HLh-UN-cus">
+                            <rect key="frame" x="22" y="147.33333333333331" width="349" height="16.333333333333343"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JD-Yf-QiP">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="42" id="ntg-Y0-ubK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <color key="textColor" name="textgray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuw-Ta-m03">
+                                    <rect key="frame" x="145" y="0.0" width="61" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60.670000000000002" id="PKb-CN-EUf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <color key="textColor" name="textgray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJu-Wy-lWc">
+                                    <rect key="frame" x="309" y="0.0" width="40" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="373-UR-sJ6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <color key="textColor" name="textgray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16.329999999999998" id="ygS-VM-aea"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atW-PO-DCv">
+                            <rect key="frame" x="22" y="224" width="349" height="115"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="115" id="c4s-4P-QbE"/>
+                            </constraints>
+                            <string key="text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.</string>
+                            <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                            <color key="textColor" name="textgray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GjI-Pi-Jjv">
+                            <rect key="frame" x="21.999999999999993" y="75" width="93.333333333333314" height="16.333333333333329"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="PH2-eF-Z5T">
+                                    <rect key="frame" x="0.0" y="0.0" width="15" height="16.333333333333332"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="15" id="aaL-Bm-nKX"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.5/10 IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-Ah-42e">
+                                    <rect key="frame" x="20" y="0.0" width="73.333333333333329" height="16.333333333333332"/>
+                                    <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
+                                    <color key="textColor" name="textgray"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16.329999999999998" id="kpu-Pi-XFl"/>
+                            </constraints>
+                        </stackView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LPt-i3-kIa">
+                            <rect key="frame" x="22" y="369.66666666666663" width="349" height="109"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="109" id="0LJ-JR-z2j"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="4" minimumInteritemSpacing="33" id="HDW-bx-90q">
+                                <size key="itemSize" width="93" height="68"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="top" secondItem="0JS-s6-520" secondAttribute="bottom" constant="95.333333333333314" id="4MK-vW-5qB"/>
+                        <constraint firstItem="O9y-xD-Qsi" firstAttribute="leading" secondItem="HLh-UN-cus" secondAttribute="leading" id="6Qd-ku-RgQ"/>
+                        <constraint firstItem="hNt-8k-1aI" firstAttribute="leading" secondItem="atW-PO-DCv" secondAttribute="leading" id="9J3-EA-4MB"/>
+                        <constraint firstItem="wMV-zm-U2a" firstAttribute="leading" secondItem="hNt-8k-1aI" secondAttribute="leading" id="9LW-VU-lhg"/>
+                        <constraint firstItem="LPt-i3-kIa" firstAttribute="top" secondItem="6OC-d0-2os" secondAttribute="bottom" constant="8" id="Bd6-A3-ZHC"/>
+                        <constraint firstItem="atW-PO-DCv" firstAttribute="centerX" secondItem="LPt-i3-kIa" secondAttribute="centerX" id="K0g-Mv-ZDR"/>
+                        <constraint firstItem="O9y-xD-Qsi" firstAttribute="top" secondItem="mtF-Ua-Me0" secondAttribute="top" constant="10" id="KDi-5z-lEo"/>
+                        <constraint firstAttribute="bottom" secondItem="LPt-i3-kIa" secondAttribute="bottom" constant="99.333333333333314" id="NgJ-xL-cd9"/>
+                        <constraint firstItem="hNt-8k-1aI" firstAttribute="top" secondItem="wMV-zm-U2a" secondAttribute="bottom" constant="9.3300000000000001" id="SDW-dL-wka"/>
+                        <constraint firstItem="atW-PO-DCv" firstAttribute="leading" secondItem="LPt-i3-kIa" secondAttribute="leading" id="U1N-En-EWU"/>
+                        <constraint firstItem="atW-PO-DCv" firstAttribute="top" secondItem="hNt-8k-1aI" secondAttribute="bottom" constant="8" symbolic="YES" id="WUy-l3-ybA"/>
+                        <constraint firstItem="GjI-Pi-Jjv" firstAttribute="leading" secondItem="mtF-Ua-Me0" secondAttribute="leading" constant="21.999999999999993" id="c7l-Nc-33n"/>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="centerX" secondItem="wMV-zm-U2a" secondAttribute="centerX" id="cM9-fB-YQM"/>
+                        <constraint firstItem="hNt-8k-1aI" firstAttribute="trailing" secondItem="atW-PO-DCv" secondAttribute="trailing" id="dwe-Mg-UdW"/>
+                        <constraint firstItem="6OC-d0-2os" firstAttribute="leading" secondItem="mtF-Ua-Me0" secondAttribute="leading" constant="21" id="e0W-vQ-5E3"/>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="leading" secondItem="wMV-zm-U2a" secondAttribute="leading" id="hH3-rg-YLq"/>
+                        <constraint firstItem="wMV-zm-U2a" firstAttribute="trailing" secondItem="hNt-8k-1aI" secondAttribute="trailing" id="ihh-yY-5GW"/>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="centerX" secondItem="mtF-Ua-Me0" secondAttribute="centerX" id="ko8-2y-HpG"/>
+                        <constraint firstItem="GjI-Pi-Jjv" firstAttribute="top" secondItem="O9y-xD-Qsi" secondAttribute="bottom" id="nSf-HJ-SHH"/>
+                        <constraint firstAttribute="trailing" secondItem="0JS-s6-520" secondAttribute="trailing" constant="32" id="odm-eW-hxE"/>
+                        <constraint firstItem="0JS-s6-520" firstAttribute="leading" secondItem="O9y-xD-Qsi" secondAttribute="trailing" constant="75" id="qX1-PQ-TiQ"/>
+                        <constraint firstItem="6OC-d0-2os" firstAttribute="top" secondItem="atW-PO-DCv" secondAttribute="bottom" id="rQf-l3-llB"/>
+                        <constraint firstItem="wMV-zm-U2a" firstAttribute="top" secondItem="HLh-UN-cus" secondAttribute="bottom" constant="8.6699999999999999" id="tUb-Kb-VGP"/>
+                        <constraint firstAttribute="trailing" secondItem="6OC-d0-2os" secondAttribute="trailing" constant="11" id="tsI-qR-1bS"/>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="top" secondItem="GjI-Pi-Jjv" secondAttribute="bottom" constant="55.999999999999986" id="vkY-XQ-iDX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mtF-Ua-Me0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Skk-XK-Zev"/>
+                <constraint firstItem="mtF-Ua-Me0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="215" id="TWm-jQ-0bZ"/>
+                <constraint firstAttribute="bottom" secondItem="mtF-Ua-Me0" secondAttribute="bottom" id="Wsj-UZ-gP5"/>
+                <constraint firstItem="HOR-LC-kne" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="b3p-t7-cyR"/>
+                <constraint firstItem="HOR-LC-kne" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iGt-mo-Vz5"/>
+                <constraint firstItem="HOR-LC-kne" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kPk-9D-5Be"/>
+                <constraint firstItem="mtF-Ua-Me0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zo9-1v-vjA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="star" width="12" height="11.333333015441895"/>
+        <namedColor name="textgray">
+            <color red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="titleBlueColor">
+            <color red="0.070588235294117646" green="0.054901960784313725" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

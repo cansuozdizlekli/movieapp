@@ -7,37 +7,25 @@
 
 import UIKit
 
-struct NowShowingMovie : Movie {
+var nowShowingMovies : [Movie] = [
+    Movie(movieTitle: "Spiderman : No Way Home", movieImage: UIImage(named:"movie1")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.", casts: [Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named: "actor2")!, castName: "İkinci cast"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland")]),
     
-    var genres: [Genres]
-    var movieTime: String
-    var movieImage: UIImage
-    let movieTitle: String
-    var ratingTitle : String
-    var videoId : String
-}
-
-struct PopularMovie : Movie {
-    var movieImage: UIImage
-    let movieTitle: String
-    var ratingTitle : String
-    var genres : [Genres]
-    var movieTime : String
-    var videoId : String
-}
-
-var nowShowingMovies : [NowShowingMovie] = [
-    NowShowingMovie(genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", movieImage: UIImage(named:"movie1")!, movieTitle: "Spider-Man : No Way Home", ratingTitle: "9.5/10 IMDb", videoId: "KusPPRI8ubg"),
-    NowShowingMovie(genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", movieImage: UIImage(named:"movie2")!, movieTitle: "Ethernals", ratingTitle: "9.5/10 IMDb", videoId: "KusPPRI8ubg"),
-    NowShowingMovie(genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", movieImage: UIImage(named:"movie3")!, movieTitle: "Shang-Chi", ratingTitle: "9.5/10 IMDb", videoId: "KusPPRI8ubg"),
-    NowShowingMovie(genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", movieImage: UIImage(named:"movie2")!, movieTitle: "Spider-Man", ratingTitle: "9.5/10 IMDb", videoId: "KusPPRI8ubg"),
+    Movie(movieTitle: "Ethernals", movieImage: UIImage(named:"movie2")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie2")!, castName: "Tom Holland")]),
+    
+    Movie(movieTitle: "Shang-Chi", movieImage: UIImage(named:"movie3")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie2")!, castName: "Tom Holland")]),
+    
+    Movie(movieTitle: "Spiderman : No Way Home", movieImage: UIImage(named:"movie1")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
+    
 ]
 
-var popularMovies : [PopularMovie] = [
-    PopularMovie(movieImage: UIImage(named:"movie4")!, movieTitle: "Venom Let There Be Carnage", ratingTitle: "6.4/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "1h 47m",videoId: "KusPPRI8ubg"),
-    PopularMovie(movieImage: UIImage(named:"movie5")!, movieTitle: "The King's Man", ratingTitle: "8.4/10 IMDb", genres: [Genres.action,Genres.fantasy], movieTime: "2h 13m",videoId: "KusPPRI8ubg"),
-    PopularMovie(movieImage: UIImage(named:"movie7")!, movieTitle: "Avatar : The Way Of Water", ratingTitle: "9.4/10 IMDb", genres: [Genres.scienceFiction,Genres.action,Genres.adventure], movieTime: "2h 55m", videoId: "KusPPRI8ubg"),
-    PopularMovie(movieImage: UIImage(named:"movie6")!, movieTitle: "Pulp Fiction", ratingTitle: "9.2/10 IMDb", genres: [Genres.thriller,Genres.crime], movieTime: "3h 18m",videoId: "KusPPRI8ubg")
+var popularMovies : [Movie] = [
+    Movie(movieTitle: "Venom Let There Be Carnage", movieImage: UIImage(named:"movie4")!, ratingTitle: "6.4/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "1h 47m",videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
+    
+    Movie(movieTitle: "The King's Man", movieImage: UIImage(named:"movie5")!, ratingTitle: "8.4/10 IMDb", genres: [Genres.action,Genres.fantasy], movieTime: "2h 13m",videoId: "KusPPRI8ubg", language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
+    
+    Movie(movieTitle: "Avatar : The Way Of Water", movieImage: UIImage(named:"movie7")!, ratingTitle: "9.4/10 IMDb", genres: [Genres.scienceFiction,Genres.action,Genres.adventure], movieTime: "2h 55m", videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
+    
+    Movie(movieTitle: "Pulp Fiction", movieImage: UIImage(named:"movie6")!, ratingTitle: "9.2/10 IMDb", genres: [Genres.thriller,Genres.crime], movieTime: "3h 18m",videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")])
 ]
 
 import UIKit
@@ -49,15 +37,10 @@ protocol HomeViewControllerDelegate: AnyObject {
 class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     weak var delegate: HomeViewControllerDelegate?
-
     @IBOutlet weak var nowPlayingLabel: UILabel!
-    
     @IBOutlet weak var popularLabel: UILabel!
-    
     @IBOutlet weak var nowShowingCollectionView: UICollectionView!
-    
     @IBOutlet weak var popularTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Movie App"

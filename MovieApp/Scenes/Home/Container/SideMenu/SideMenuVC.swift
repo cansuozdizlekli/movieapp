@@ -30,6 +30,7 @@ class SideMenuVC: UIViewController {
         view.frame.size.width = screenWidth - 133
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+        
     }
     
     private func setupTableView() {
@@ -60,9 +61,13 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
         let backgroundColorView = UIView()
         backgroundColorView.backgroundColor = UIColor.lightestBlue
         cell.selectedBackgroundView = backgroundColorView
-        
-        
+        self.tableView.showsVerticalScrollIndicator = false
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     
 }
