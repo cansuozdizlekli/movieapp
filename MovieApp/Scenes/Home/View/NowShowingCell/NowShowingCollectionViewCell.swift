@@ -9,7 +9,7 @@ import UIKit
 
 class NowShowingCollectionViewCell: UICollectionViewCell {
     
-    var cellItem: Movie!
+    var cellItem: MovieResult!
 
     private let movieImage: UIImageView = {
         let movieImage = UIImageView(frame: CGRect(x: 0, y: 45, width: 130, height: 190))
@@ -83,9 +83,10 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     }
     
     func setupItems() {
-        self.movieTitle.text = cellItem.movieTitle
-        self.movieImage.image = cellItem.movieImage
-        self.ratingTitle.text = cellItem.ratingTitle
+        self.movieTitle.text = cellItem.originalTitle
+        self.movieImage.sd_setImage(with: URL(string: cellItem.posterImage))
+//        self.movieImage.image = cellItem.movieImage
+        self.ratingTitle.text = "\(String(format: "%.1f", cellItem.voteAverage!)) / 10 IMDB"
         
     }
    

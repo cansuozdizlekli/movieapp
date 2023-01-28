@@ -9,7 +9,7 @@ import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell {
     
-    var cellItem : Cast!
+//    var cellItem : Cast!
 
     @IBOutlet weak var castImageView: UIImageView!
     @IBOutlet weak var castNameLabel: UILabel!
@@ -34,11 +34,11 @@ class CastCollectionViewCell: UICollectionViewCell {
        
     }
 
-    func setupItems() {
-        self.castNameLabel.text = cellItem.castName
-        self.castImageView.image = cellItem.castImage
-        
-    }
+//    func setupItems() {
+//        self.castNameLabel.text = cellItem.castName
+//        self.castImageView.image = cellItem.castImage
+//        
+//    }
    
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum API: String {
-    case baseURL = "https://api.themoviedb.org/3/movie/"
+    case baseURL = "https://api.themoviedb.org/3"
     
     
 }

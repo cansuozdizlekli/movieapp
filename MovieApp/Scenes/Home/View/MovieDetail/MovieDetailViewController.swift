@@ -21,7 +21,7 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var castCollectionView: UICollectionView!
     
-    var selectedMovie: Movie!
+    var selectedMovie: MovieResult!
     
     private let backButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 15, y: 65, width: 50, height: 50))
@@ -42,7 +42,7 @@ class MovieDetailViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true
         playerView.webView?.translatesAutoresizingMaskIntoConstraints = false
-        playerView.load(withVideoId:selectedMovie.videoId)
+//        playerView.load(withVideoId:selectedMovie.videoId)
         initUI()
         setupCollectionView()
         editSize()
@@ -55,34 +55,34 @@ class MovieDetailViewController: UIViewController {
         
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         detailView.layer.cornerRadius = 10
-        movieNameLabel.text = selectedMovie.movieTitle
-        ratingLabel.text = selectedMovie.ratingTitle
-        lengthLabel.text = selectedMovie.movieTime
-        languageLabel.text = selectedMovie.language
-        ratingTypeLabel.text = selectedMovie.rating
-        descriptionLabel.text = selectedMovie.description
-        
-        print("turlerr:", selectedMovie.genres)
-        var place = -60
-        for genre in selectedMovie.genres {
-            place = place + 80
-                print("turler:",genre)
-            let title: UILabel = {
-                var label = UILabel()
-                label = UILabel(frame: CGRect(x: place, y: Int(screenHeight) / 2 - 40, width: 70, height: 20))
-                label.backgroundColor = .lightestBlue
-                label.text = genre.title
-                label.textColor = .secondaryBlue
-                label.adjustsFontSizeToFitWidth = false
-                label.textAlignment = .center
-                label.layer.cornerRadius = 10
-                label.layer.masksToBounds = true
-                label.font = UIFont(name: "Mulish-Bold", size: 10)
-                return label
-            }()
-            view.addSubview(title)
-        }
-        
+//        movieNameLabel.text = selectedMovie.movieTitle
+//        ratingLabel.text = selectedMovie.ratingTitle
+//        lengthLabel.text = selectedMovie.movieTime
+//        languageLabel.text = selectedMovie.language
+//        ratingTypeLabel.text = selectedMovie.rating
+//        descriptionLabel.text = selectedMovie.description
+//
+//        print("turlerr:", selectedMovie.genres)
+//        var place = -60
+//        for genre in selectedMovie.genres {
+//            place = place + 80
+//                print("turler:",genre)
+//            let title: UILabel = {
+//                var label = UILabel()
+//                label = UILabel(frame: CGRect(x: place, y: Int(screenHeight) / 2 - 40, width: 70, height: 20))
+//                label.backgroundColor = .lightestBlue
+//                label.text = genre.title
+//                label.textColor = .secondaryBlue
+//                label.adjustsFontSizeToFitWidth = false
+//                label.textAlignment = .center
+//                label.layer.cornerRadius = 10
+//                label.layer.masksToBounds = true
+//                label.font = UIFont(name: "Mulish-Bold", size: 10)
+//                return label
+//            }()
+//            view.addSubview(title)
+//        }
+//
         
     }
     
@@ -93,8 +93,8 @@ class MovieDetailViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-        castCollectionView.delegate = self
-        castCollectionView.dataSource = self
+//        castCollectionView.delegate = self
+//        castCollectionView.dataSource = self
         castCollectionView.showsHorizontalScrollIndicator = false
         castCollectionView.backgroundColor = .green
         castCollectionView.register(CastCollectionViewCell.nib, forCellWithReuseIdentifier: CastCollectionViewCell.identifier)
@@ -124,26 +124,26 @@ class MovieDetailViewController: UIViewController {
 }
 
 
-extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selectedMovie.casts.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as? CastCollectionViewCell else {
-            fatalError()
-        }
-        cell.bounds = CGRect(x: 0, y: 0, width: 80, height: 100)
-
-        print("cell içi cemil", selectedMovie.casts[indexPath.row])
-        cell.cellItem = selectedMovie.casts[indexPath.row]
-       
-        cell.setupItems()
-
-        return cell
-    }
+//extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return selectedMovie.casts.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as? CastCollectionViewCell else {
+//            fatalError()
+//        }
+//        cell.bounds = CGRect(x: 0, y: 0, width: 80, height: 100)
+//
+//        print("cell içi cemil", selectedMovie.casts[indexPath.row])
+//        cell.cellItem = selectedMovie.casts[indexPath.row]
+//
+//        cell.setupItems()
+//
+//        return cell
+//    }
+//
+//
     
-    
-    
 
-}
+//}

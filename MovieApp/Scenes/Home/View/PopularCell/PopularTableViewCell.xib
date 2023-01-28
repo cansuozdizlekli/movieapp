@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -44,12 +45,18 @@
                                 <rect key="frame" x="0.0" y="0.99999999999999822" width="12" height="11.000000000000002"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="4BB-WF-a7x"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12.33" id="7gg-sm-cAl"/>
                                     <constraint firstAttribute="height" constant="12.33" id="JLn-VW-5qM"/>
                                     <constraint firstAttribute="width" constant="12" id="Jaa-w4-74o"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 47m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-RA-0w0">
                                 <rect key="frame" x="17" y="0.0" width="53" height="12.333333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="4mo-Kx-ve1"/>
+                                    <constraint firstAttribute="height" constant="12.33" id="C9x-vL-Kcb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,11 +64,19 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BLT-RA-0w0" secondAttribute="bottom" id="42T-7S-Ksu"/>
+                            <constraint firstAttribute="trailing" secondItem="BLT-RA-0w0" secondAttribute="trailing" id="835-jH-8k0"/>
+                            <constraint firstAttribute="bottom" secondItem="BeJ-Fq-vQt" secondAttribute="bottom" id="9BN-cU-Way"/>
                             <constraint firstAttribute="bottom" secondItem="BeJ-Fq-vQt" secondAttribute="bottom" id="ErB-WZ-7J4"/>
                             <constraint firstItem="BLT-RA-0w0" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="Gbt-ch-3SY"/>
+                            <constraint firstItem="BeJ-Fq-vQt" firstAttribute="leading" secondItem="06D-tQ-XcE" secondAttribute="leading" id="RIk-FK-RLU"/>
+                            <constraint firstAttribute="bottom" secondItem="BLT-RA-0w0" secondAttribute="bottom" id="Ug4-MA-dTP"/>
+                            <constraint firstItem="BLT-RA-0w0" firstAttribute="leading" secondItem="BeJ-Fq-vQt" secondAttribute="trailing" constant="5" id="V4r-sE-Zvx"/>
+                            <constraint firstItem="BLT-RA-0w0" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="b7B-up-oDO"/>
                             <constraint firstItem="BeJ-Fq-vQt" firstAttribute="leading" secondItem="06D-tQ-XcE" secondAttribute="leading" id="gh2-eP-5TT"/>
                             <constraint firstItem="BeJ-Fq-vQt" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="gx8-Kz-9TN"/>
+                            <constraint firstItem="BLT-RA-0w0" firstAttribute="leading" secondItem="BeJ-Fq-vQt" secondAttribute="trailing" constant="5" id="hMH-FH-O0u"/>
                             <constraint firstAttribute="trailing" secondItem="BLT-RA-0w0" secondAttribute="trailing" id="lHi-Oy-Sx8"/>
+                            <constraint firstItem="BeJ-Fq-vQt" firstAttribute="top" secondItem="06D-tQ-XcE" secondAttribute="top" id="rmX-cd-gNm"/>
                             <constraint firstItem="BLT-RA-0w0" firstAttribute="leading" secondItem="BeJ-Fq-vQt" secondAttribute="trailing" constant="5" id="tmP-SS-tKX"/>
                         </constraints>
                     </stackView>
@@ -94,35 +109,45 @@
                             <constraint firstAttribute="bottom" secondItem="v6R-Gg-UCK" secondAttribute="bottom" id="ycA-Jq-NnB"/>
                         </constraints>
                     </stackView>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HORROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okn-Sm-xDp">
-                        <rect key="frame" x="118" y="103" width="57" height="16.333333333333329"/>
-                        <fontDescription key="fontDescription" name="Mulish-Regular" family="Mulish" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="coZ-IY-eLO">
+                        <rect key="frame" x="117" y="92" width="187" height="36"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="Nez-mR-0cB"/>
+                            <constraint firstAttribute="width" constant="187" id="oSq-Nz-pAW"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8ua-xe-0ix">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="Okn-Sm-xDp" secondAttribute="trailing" constant="129" id="3lz-ar-1Vw"/>
-                    <constraint firstItem="Okn-Sm-xDp" firstAttribute="top" secondItem="y0h-Fq-2Jd" secondAttribute="bottom" constant="18.329999999999998" id="A1h-UV-YPL"/>
+                    <constraint firstItem="06D-tQ-XcE" firstAttribute="top" secondItem="coZ-IY-eLO" secondAttribute="bottom" constant="8.3300000000000001" id="5W0-Fo-doi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="06D-tQ-XcE" secondAttribute="trailing" constant="117" id="71P-sk-WxU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="06D-tQ-XcE" secondAttribute="bottom" constant="20.329999999999998" id="KTM-e6-5P1"/>
                     <constraint firstItem="XL5-HE-miV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="ODP-ai-78U"/>
                     <constraint firstAttribute="bottom" secondItem="XL5-HE-miV" secondAttribute="bottom" constant="24" id="OlC-Zj-2Gx"/>
-                    <constraint firstItem="06D-tQ-XcE" firstAttribute="top" secondItem="Okn-Sm-xDp" secondAttribute="bottom" constant="17" id="Ras-gI-2ip"/>
+                    <constraint firstItem="coZ-IY-eLO" firstAttribute="top" secondItem="y0h-Fq-2Jd" secondAttribute="bottom" constant="7.3300000000000001" id="Wt0-g7-LwB"/>
                     <constraint firstItem="y0h-Fq-2Jd" firstAttribute="top" secondItem="p2J-m4-TYh" secondAttribute="bottom" constant="10" id="ZDt-Sg-Pl4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="06D-tQ-XcE" secondAttribute="trailing" constant="117" id="bBw-Vs-fgH"/>
+                    <constraint firstItem="coZ-IY-eLO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="c9D-Wj-kvq"/>
                     <constraint firstItem="p2J-m4-TYh" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="gf7-3h-N1y"/>
                     <constraint firstItem="XL5-HE-miV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gy0-1e-Vx5"/>
                     <constraint firstItem="y0h-Fq-2Jd" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="24" id="i8B-Ua-UXc"/>
                     <constraint firstItem="06D-tQ-XcE" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="k4i-dL-EFD"/>
+                    <constraint firstItem="coZ-IY-eLO" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="kSu-4W-1aM"/>
                     <constraint firstItem="p2J-m4-TYh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="oWw-ZN-3m8"/>
                     <constraint firstAttribute="trailing" secondItem="p2J-m4-TYh" secondAttribute="trailing" constant="15" id="qIP-pY-LUa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="y0h-Fq-2Jd" secondAttribute="trailing" constant="77.670000000000002" id="qRq-ql-t7W"/>
-                    <constraint firstItem="06D-tQ-XcE" firstAttribute="top" secondItem="Okn-Sm-xDp" secondAttribute="bottom" constant="17" id="r5Q-MN-ZUq"/>
-                    <constraint firstItem="Okn-Sm-xDp" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="24" id="rrO-IS-XrI"/>
+                    <constraint firstItem="06D-tQ-XcE" firstAttribute="leading" secondItem="XL5-HE-miV" secondAttribute="trailing" constant="23" id="t0i-Kv-ZWU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="genreLabel" destination="Okn-Sm-xDp" id="KlR-GT-xbK"/>
+                <outlet property="genreCollectionView" destination="coZ-IY-eLO" id="CPz-UJ-7Mx"/>
                 <outlet property="movieImageView" destination="XL5-HE-miV" id="pGK-vh-pqy"/>
                 <outlet property="movieTitleLabel" destination="p2J-m4-TYh" id="nrh-Zn-1qa"/>
                 <outlet property="ratingLabel" destination="v6R-Gg-UCK" id="IDZ-YC-97Q"/>
@@ -135,5 +160,8 @@
         <image name="movie4" width="85" height="120"/>
         <image name="star" width="12" height="11.333333015441895"/>
         <image name="timer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

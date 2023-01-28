@@ -6,51 +6,44 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol PopularTableViewCellDelegate : AnyObject{
-
+    
+}
+protocol MovieCellProtocol {
+    var posterImage: String { get }
+    var titleText: String { get }
+    var ratingText: String { get }
+    var genreItems: [String] { get }
+    var overViewText: String { get }
 }
 
 class PopularTableViewCell: UITableViewCell {
     
-//    var cellItem: PopularMovie!
-    
-    var cellItem: Movie! {
+    var cellItem: MovieResult! {
         didSet {
-            self.movieImageView.image = cellItem?.movieImage
-            self.movieTitleLabel.text = cellItem?.movieTitle
-            self.ratingLabel.text = cellItem?.ratingTitle
-            self.timeLabel.text = cellItem?.movieTime
-            var place = 35
-            for genre in cellItem.genres {
-                place = place + 80
-//                print("turler:",genre.title)
-                let title: UILabel = {
-                    var label = UILabel()
-                    label = UILabel(frame: CGRect(x: place, y: 80, width: 70, height: 20))
-                    label.backgroundColor = .lightestBlue
-                    label.text = genre.title
-                    label.textColor = .secondaryBlue
-                    label.adjustsFontSizeToFitWidth = false
-                    label.textAlignment = .center
-                    label.layer.cornerRadius = 10
-                    label.layer.masksToBounds = true
-                    label.font = UIFont(name: "Mulish-Bold", size: 10)
-                    return label
-                }()
-                contentView.addSubview(title)
+            self.movieImageView.sd_setImage(with: URL(string: cellItem.posterImage))
+            self.movieTitleLabel.text = cellItem?.originalTitle
+            self.ratingLabel.text = "\(String(format: "%.1f", cellItem.voteAverage!)) / 10 IMDB"
+            print("kac",cellItem.genreIDS)
+            if cellItem.genreItems.isEmpty{
+                print("genre gelmiyor")
+            }else {
+                genres = (cellItem?.genreIDS)!
             }
-//            print("kac film turler:\n",cellItem.genres.count)
         }
     }
+    
+    var genres = [Int]()
     
     weak var delegate: PopularTableViewCellDelegate?
 
 
+    @IBOutlet weak var genreCollectionView: UICollectionView!
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
@@ -70,10 +63,26 @@ class PopularTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         movieImageView.layer.cornerRadius = 5
-        
-       
     }
     
-
     
 }
+
+extension PopularTableViewCell: UICollectionViewDelegate , UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("cansu\n",genres.count)
+        return genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else {
+            fatalError()
+        }
+        return cell
+
+    }
+    
+    
+}
+
+
