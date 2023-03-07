@@ -12,7 +12,7 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     var cellItem: MovieResult!
 
     private let movieImage: UIImageView = {
-        let movieImage = UIImageView(frame: CGRect(x: 0, y: 45, width: 130, height: 190))
+        let movieImage = UIImageView(frame: CGRect(x: 0, y: 15, width: 160, height: 250))
         movieImage.translatesAutoresizingMaskIntoConstraints = false
         movieImage.contentMode = .scaleAspectFill
         movieImage.layer.cornerRadius = 5
@@ -22,18 +22,18 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     
     private var movieTitle: UILabel = {
         var label = UILabel()
-        label = UILabel(frame: CGRect(x: 0, y: 241, width: 180, height: 40))
+        label = UILabel(frame: CGRect(x: 0, y: 270, width: 180, height: 40))
         label.numberOfLines = 3
         label.adjustsFontSizeToFitWidth = false
         label.textAlignment = .left
 //        label.backgroundColor = .systemRed
-        label.font = UIFont(name: "Mulish-Bold", size: 14)
+        label.font = UIFont(name: "Mulish-Bold", size: 15)
         return label
     }()
     
     private var ratingTitle: UILabel = {
         var label = UILabel()
-        label = UILabel(frame: CGRect(x: 17, y: 240, width: 160, height: 100))
+        label = UILabel(frame: CGRect(x: 17, y: 270, width: 160, height: 100))
         label.numberOfLines = 1
         label.textColor = .textGray
         label.adjustsFontSizeToFitWidth = false
@@ -44,7 +44,7 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     }()
     
     private let starImage: UIImageView = {
-        let starImage = UIImageView(frame: CGRect(x: 0, y: 283.5, width: 12, height: 12))
+        let starImage = UIImageView(frame: CGRect(x: 0, y: 310.5, width: 12, height: 12))
         starImage.translatesAutoresizingMaskIntoConstraints = false
         starImage.contentMode = .scaleAspectFill
         starImage.image = UIImage(named: "star")

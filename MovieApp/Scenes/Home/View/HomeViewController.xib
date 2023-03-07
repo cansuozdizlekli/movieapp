@@ -34,7 +34,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7Z-WH-QBT">
-                                    <rect key="frame" x="20" y="325.66666666666669" width="361" height="19"/>
+                                    <rect key="frame" x="20" y="347.66666666666669" width="361" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="a6N-OU-vvj"/>
                                     </constraints>
@@ -43,25 +43,25 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pfS-dr-ADe">
-                                    <rect key="frame" x="20" y="49.666666666666657" width="361" height="266"/>
+                                    <rect key="frame" x="20" y="21.666666666666657" width="361" height="326.00000000000006"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="266" id="DKL-gf-FyK"/>
+                                        <constraint firstAttribute="height" constant="326" id="DKL-gf-FyK"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v0p-Dk-vh7">
-                                        <size key="itemSize" width="128" height="370"/>
-                                        <size key="estimatedItemSize" width="128" height="300"/>
+                                        <size key="itemSize" width="128" height="400"/>
+                                        <size key="estimatedItemSize" width="128" height="362"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="keq-ic-DgL">
-                                    <rect key="frame" x="20" y="352.66666666666674" width="361" height="457.33333333333326"/>
+                                    <rect key="frame" x="20" y="366.66666666666674" width="361" height="443.33333333333326"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoB-Pg-kXz">
-                                    <rect key="frame" x="20" y="20" width="361" height="21.666666666666671"/>
+                                    <rect key="frame" x="20" y="0.0" width="361" height="21.666666666666668"/>
                                     <fontDescription key="fontDescription" name="Merriweather-Bold" family="Merriweather" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -69,16 +69,16 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="keq-ic-DgL" firstAttribute="top" secondItem="o7Z-WH-QBT" secondAttribute="bottom" constant="8.3300000000000001" id="4XG-fM-zpx"/>
+                                <constraint firstItem="keq-ic-DgL" firstAttribute="top" secondItem="o7Z-WH-QBT" secondAttribute="bottom" id="4XG-fM-zpx"/>
                                 <constraint firstItem="DoB-Pg-kXz" firstAttribute="leading" secondItem="rEZ-Qv-LzL" secondAttribute="leading" constant="20" symbolic="YES" id="9pV-nU-kqD"/>
-                                <constraint firstItem="o7Z-WH-QBT" firstAttribute="top" secondItem="pfS-dr-ADe" secondAttribute="bottom" constant="10" id="BIY-Rq-qJS"/>
+                                <constraint firstItem="o7Z-WH-QBT" firstAttribute="top" secondItem="pfS-dr-ADe" secondAttribute="bottom" id="BIY-Rq-qJS"/>
                                 <constraint firstAttribute="trailing" secondItem="pfS-dr-ADe" secondAttribute="trailing" constant="12" id="ET2-Sd-aQE"/>
-                                <constraint firstItem="pfS-dr-ADe" firstAttribute="top" secondItem="DoB-Pg-kXz" secondAttribute="bottom" constant="8" id="EnL-3k-h30"/>
+                                <constraint firstItem="pfS-dr-ADe" firstAttribute="top" secondItem="DoB-Pg-kXz" secondAttribute="bottom" id="EnL-3k-h30"/>
                                 <constraint firstAttribute="bottom" secondItem="keq-ic-DgL" secondAttribute="bottom" constant="42" id="Gew-RI-eLI"/>
                                 <constraint firstAttribute="trailing" secondItem="DoB-Pg-kXz" secondAttribute="trailing" constant="12" id="Iig-h8-ojP"/>
-                                <constraint firstItem="DoB-Pg-kXz" firstAttribute="top" secondItem="rEZ-Qv-LzL" secondAttribute="top" constant="20" id="K0o-pv-xyB"/>
+                                <constraint firstItem="DoB-Pg-kXz" firstAttribute="top" secondItem="rEZ-Qv-LzL" secondAttribute="top" id="K0o-pv-xyB"/>
                                 <constraint firstAttribute="trailing" secondItem="keq-ic-DgL" secondAttribute="trailing" constant="12" id="M9R-r8-pOD"/>
-                                <constraint firstItem="keq-ic-DgL" firstAttribute="top" secondItem="o7Z-WH-QBT" secondAttribute="bottom" constant="8.3300000000000001" id="N8n-zt-dly"/>
+                                <constraint firstItem="keq-ic-DgL" firstAttribute="top" secondItem="o7Z-WH-QBT" secondAttribute="bottom" id="N8n-zt-dly"/>
                                 <constraint firstItem="keq-ic-DgL" firstAttribute="leading" secondItem="rEZ-Qv-LzL" secondAttribute="leading" constant="20" symbolic="YES" id="U1J-qh-nbr"/>
                                 <constraint firstAttribute="trailing" secondItem="keq-ic-DgL" secondAttribute="trailing" constant="12" id="Vpm-C1-0PF"/>
                                 <constraint firstItem="keq-ic-DgL" firstAttribute="leading" secondItem="rEZ-Qv-LzL" secondAttribute="leading" constant="20" symbolic="YES" id="eZI-Dm-f6N"/>

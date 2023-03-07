@@ -14,6 +14,8 @@
 		8D125D712976EA04001F4CB9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8D125D702976EA04001F4CB9 /* Alamofire */; };
 		8D125D73297717E6001F4CB9 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D125D72297717E6001F4CB9 /* GenreModel.swift */; };
 		8D125D7529771A85001F4CB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D125D7429771A85001F4CB9 /* HomeViewModel.swift */; };
+		8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DCF29B67EA800DCE72D /* CastModel.swift */; };
+		8D700DD229B7E85800DCE72D /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DD129B7E85800DCE72D /* VideoModel.swift */; };
 		8D88DBA22944A25C00D29867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA12944A25C00D29867 /* AppDelegate.swift */; };
 		8D88DBA42944A25C00D29867 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA32944A25C00D29867 /* SceneDelegate.swift */; };
 		8D88DBA92944A25C00D29867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D88DBA72944A25C00D29867 /* Main.storyboard */; };
@@ -103,6 +105,8 @@
 		8D125D6D2976E931001F4CB9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8D125D72297717E6001F4CB9 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		8D125D7429771A85001F4CB9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8D700DCF29B67EA800DCE72D /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
+		8D700DD129B7E85800DCE72D /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8D88DB9E2944A25C00D29867 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D88DBA12944A25C00D29867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D88DBA32944A25C00D29867 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -334,6 +338,8 @@
 			children = (
 				8DB7ED4029460EF400C5B8EA /* MovieModel.swift */,
 				8D125D72297717E6001F4CB9 /* GenreModel.swift */,
+				8D700DCF29B67EA800DCE72D /* CastModel.swift */,
+				8D700DD129B7E85800DCE72D /* VideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,9 +427,9 @@
 		8DD73763294CAA460044DB54 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8DD73778294E79320044DB54 /* CastCell */,
 				8DD73764294CAA7C0044DB54 /* MovieDetailViewController.swift */,
 				8DD73765294CAA7C0044DB54 /* MovieDetailViewController.xib */,
+				8DD73778294E79320044DB54 /* CastCell */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				8D125D672976E50F001F4CB9 /* NetworkHelper.swift in Sources */,
 				8D88DBC02944A66B00D29867 /* TabBarController.swift in Sources */,
 				8DD7AD8629466AED00B03570 /* HomeViewController.swift in Sources */,
+				8D700DD229B7E85800DCE72D /* VideoModel.swift in Sources */,
 				8DB7ED392945FD2100C5B8EA /* MovieTypeTableViewCell.swift in Sources */,
 				8DB7ED432946111200C5B8EA /* UIColor+Ext.swift in Sources */,
 				8D88DBE22944DD9E00D29867 /* SideMenuVC.swift in Sources */,
@@ -707,6 +714,7 @@
 				8DB7ED352944E5A400C5B8EA /* Constant.swift in Sources */,
 				8D125D7529771A85001F4CB9 /* HomeViewModel.swift in Sources */,
 				8DB7ED4129460EF400C5B8EA /* MovieModel.swift in Sources */,
+				8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */,
 				8D88DBD62944C09100D29867 /* Icon.swift in Sources */,
 				8D88DBD22944BD0B00D29867 /* SettingsVC.swift in Sources */,
 				8D125D6C2976E5F4001F4CB9 /* HomeHelper.swift in Sources */,

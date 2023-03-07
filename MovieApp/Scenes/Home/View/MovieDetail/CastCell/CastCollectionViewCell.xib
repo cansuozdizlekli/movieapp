@@ -18,17 +18,16 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX3-8R-07Y">
-                        <rect key="frame" x="0.0" y="80.333333333333329" width="70" height="15.666666666666671"/>
+                        <rect key="frame" x="0.0" y="86.333333333333329" width="70" height="15.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15.666666666666671" id="hWb-5Y-9Ki"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="0X6-RT-eYh">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="70" id="YjT-Bh-sFh"/>
-                            <constraint firstAttribute="width" constant="70" id="vII-wa-dWE"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie4" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0X6-RT-eYh">
+                        <rect key="frame" x="0.0" y="0.0" width="70" height="86.333333333333329"/>
                     </imageView>
                 </subviews>
             </view>
@@ -36,15 +35,15 @@
             <color key="backgroundColor" systemColor="systemPinkColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="pX3-8R-07Y" secondAttribute="trailing" id="073-h9-OY5"/>
-                <constraint firstItem="0X6-RT-eYh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E2a-hL-nGk"/>
-                <constraint firstItem="0X6-RT-eYh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Giu-S1-H9L"/>
+                <constraint firstItem="0X6-RT-eYh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EGS-EO-0gm"/>
                 <constraint firstItem="pX3-8R-07Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QOe-Gb-z6P"/>
-                <constraint firstItem="pX3-8R-07Y" firstAttribute="top" secondItem="0X6-RT-eYh" secondAttribute="bottom" constant="10.33" id="iBi-Zl-U7d"/>
-                <constraint firstAttribute="bottom" secondItem="pX3-8R-07Y" secondAttribute="bottom" constant="6" id="p1t-7D-Qhw"/>
-                <constraint firstAttribute="trailing" secondItem="0X6-RT-eYh" secondAttribute="trailing" id="qpQ-aD-tRB"/>
+                <constraint firstItem="pX3-8R-07Y" firstAttribute="top" secondItem="0X6-RT-eYh" secondAttribute="bottom" id="ST1-2d-6wI"/>
+                <constraint firstAttribute="trailing" secondItem="0X6-RT-eYh" secondAttribute="trailing" id="aQQ-r3-KUB"/>
+                <constraint firstItem="0X6-RT-eYh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eLZ-nP-fbg"/>
+                <constraint firstAttribute="bottom" secondItem="pX3-8R-07Y" secondAttribute="bottom" id="p1t-7D-Qhw"/>
                 <constraint firstItem="pX3-8R-07Y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qzx-6c-HeY"/>
                 <constraint firstAttribute="trailing" secondItem="pX3-8R-07Y" secondAttribute="trailing" id="sqy-Z5-5qP"/>
-                <constraint firstAttribute="bottom" secondItem="pX3-8R-07Y" secondAttribute="bottom" constant="6" id="xkN-DV-gKl"/>
+                <constraint firstAttribute="bottom" secondItem="pX3-8R-07Y" secondAttribute="bottom" id="xkN-DV-gKl"/>
             </constraints>
             <size key="customSize" width="70" height="102"/>
             <connections>
@@ -55,7 +54,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="star" width="12" height="11.333333015441895"/>
+        <image name="movie4" width="85" height="120"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

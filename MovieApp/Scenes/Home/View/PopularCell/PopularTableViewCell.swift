@@ -26,19 +26,22 @@ class PopularTableViewCell: UITableViewCell {
             self.movieImageView.sd_setImage(with: URL(string: cellItem.posterImage))
             self.movieTitleLabel.text = cellItem?.originalTitle
             self.ratingLabel.text = "\(String(format: "%.1f", cellItem.voteAverage!)) / 10 IMDB"
-            print("kac",cellItem.genreIDS)
-            if cellItem.genreItems.isEmpty{
-                print("genre gelmiyor")
+            if ((cellItem.genreItems.isEmpty)){
+//                print("genre gelmiyor")
             }else {
-                genres = (cellItem?.genreIDS)!
+                genres = cellItem.genreItems
+//                print("genre geliyor",genres)
+                genreCollectionView.delegate = self
+                genreCollectionView.dataSource = self
+                genreCollectionView.register(GenreCollectionViewCell.nib, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+                genreCollectionView.reloadData()
             }
         }
     }
     
-    var genres = [Int]()
+    var genres = [String]()
     
     weak var delegate: PopularTableViewCellDelegate?
-
 
     @IBOutlet weak var genreCollectionView: UICollectionView!
     @IBOutlet weak var movieImageView: UIImageView!
@@ -70,7 +73,7 @@ class PopularTableViewCell: UITableViewCell {
 
 extension PopularTableViewCell: UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("cansu\n",genres.count)
+//        print("cansu\n",genres.count)
         return genres.count
     }
     
@@ -78,6 +81,9 @@ extension PopularTableViewCell: UICollectionViewDelegate , UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else {
             fatalError()
         }
+//        print("ofki ne of",genres)
+        cell.configure(text: genres[indexPath.item].uppercased())
+        
         return cell
 
     }

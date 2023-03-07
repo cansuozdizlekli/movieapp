@@ -25,6 +25,7 @@
                 <outlet property="castCollectionView" destination="LPt-i3-kIa" id="JD1-YW-WzT"/>
                 <outlet property="descriptionLabel" destination="atW-PO-DCv" id="qqQ-7o-Ewj"/>
                 <outlet property="detailView" destination="mtF-Ua-Me0" id="8Eh-p6-VDf"/>
+                <outlet property="genreCollectionView" destination="Kyj-T8-HNh" id="3Ed-hh-FxB"/>
                 <outlet property="languageLabel" destination="wDS-mH-HcB" id="zuV-YV-v5v"/>
                 <outlet property="lengthLabel" destination="ADc-Y6-qge" id="Thz-Yx-LkO"/>
                 <outlet property="movieNameLabel" destination="O9y-xD-Qsi" id="5Lf-Qg-cIN"/>
@@ -192,6 +193,16 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Kyj-T8-HNh">
+                            <rect key="frame" x="21" y="99" width="350" height="41"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7eE-CK-Ws3">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -202,10 +213,13 @@
                         <constraint firstItem="LPt-i3-kIa" firstAttribute="top" secondItem="6OC-d0-2os" secondAttribute="bottom" constant="8" id="Bd6-A3-ZHC"/>
                         <constraint firstItem="atW-PO-DCv" firstAttribute="centerX" secondItem="LPt-i3-kIa" secondAttribute="centerX" id="K0g-Mv-ZDR"/>
                         <constraint firstItem="O9y-xD-Qsi" firstAttribute="top" secondItem="mtF-Ua-Me0" secondAttribute="top" constant="10" id="KDi-5z-lEo"/>
+                        <constraint firstAttribute="trailing" secondItem="Kyj-T8-HNh" secondAttribute="trailing" constant="22" id="Kj0-0p-vJP"/>
                         <constraint firstAttribute="bottom" secondItem="LPt-i3-kIa" secondAttribute="bottom" constant="99.333333333333314" id="NgJ-xL-cd9"/>
+                        <constraint firstItem="HLh-UN-cus" firstAttribute="top" secondItem="Kyj-T8-HNh" secondAttribute="bottom" constant="7.3300000000000001" id="PLb-Yh-ZAZ"/>
                         <constraint firstItem="hNt-8k-1aI" firstAttribute="top" secondItem="wMV-zm-U2a" secondAttribute="bottom" constant="9.3300000000000001" id="SDW-dL-wka"/>
                         <constraint firstItem="atW-PO-DCv" firstAttribute="leading" secondItem="LPt-i3-kIa" secondAttribute="leading" id="U1N-En-EWU"/>
                         <constraint firstItem="atW-PO-DCv" firstAttribute="top" secondItem="hNt-8k-1aI" secondAttribute="bottom" constant="8" symbolic="YES" id="WUy-l3-ybA"/>
+                        <constraint firstItem="Kyj-T8-HNh" firstAttribute="leading" secondItem="mtF-Ua-Me0" secondAttribute="leading" constant="21" id="ZDA-Cf-hW0"/>
                         <constraint firstItem="GjI-Pi-Jjv" firstAttribute="leading" secondItem="mtF-Ua-Me0" secondAttribute="leading" constant="21.999999999999993" id="c7l-Nc-33n"/>
                         <constraint firstItem="HLh-UN-cus" firstAttribute="centerX" secondItem="wMV-zm-U2a" secondAttribute="centerX" id="cM9-fB-YQM"/>
                         <constraint firstItem="hNt-8k-1aI" firstAttribute="trailing" secondItem="atW-PO-DCv" secondAttribute="trailing" id="dwe-Mg-UdW"/>
@@ -213,6 +227,7 @@
                         <constraint firstItem="HLh-UN-cus" firstAttribute="leading" secondItem="wMV-zm-U2a" secondAttribute="leading" id="hH3-rg-YLq"/>
                         <constraint firstItem="wMV-zm-U2a" firstAttribute="trailing" secondItem="hNt-8k-1aI" secondAttribute="trailing" id="ihh-yY-5GW"/>
                         <constraint firstItem="HLh-UN-cus" firstAttribute="centerX" secondItem="mtF-Ua-Me0" secondAttribute="centerX" id="ko8-2y-HpG"/>
+                        <constraint firstItem="Kyj-T8-HNh" firstAttribute="top" secondItem="GjI-Pi-Jjv" secondAttribute="bottom" constant="7.6699999999999999" id="mRw-6E-wsE"/>
                         <constraint firstItem="GjI-Pi-Jjv" firstAttribute="top" secondItem="O9y-xD-Qsi" secondAttribute="bottom" id="nSf-HJ-SHH"/>
                         <constraint firstAttribute="trailing" secondItem="0JS-s6-520" secondAttribute="trailing" constant="32" id="odm-eW-hxE"/>
                         <constraint firstItem="0JS-s6-520" firstAttribute="leading" secondItem="O9y-xD-Qsi" secondAttribute="trailing" constant="75" id="qX1-PQ-TiQ"/>

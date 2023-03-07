@@ -7,27 +7,6 @@
 
 import UIKit
 
-//var nowShowingMovies : [Movie] = [
-//    Movie(movieTitle: "Spiderman : No Way Home", movieImage: UIImage(named:"movie1")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.", casts: [Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named: "actor2")!, castName: "İkinci cast"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland"),Cast(castImage: UIImage(named:"actor")!, castName: "Tom Holland")]),
-//
-//    Movie(movieTitle: "Ethernals", movieImage: UIImage(named:"movie2")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie2")!, castName: "Tom Holland")]),
-//
-//    Movie(movieTitle: "Shang-Chi", movieImage: UIImage(named:"movie3")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie2")!, castName: "Tom Holland")]),
-//
-//    Movie(movieTitle: "Spiderman : No Way Home", movieImage: UIImage(named:"movie1")!, ratingTitle: "9.5/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "2h 13m", videoId: "KusPPRI8ubg", language: "English", rating: "PC-14", description: "Konu", casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
-//
-//]
-
-//var popularMovies : [Movie] = [
-//    Movie(movieTitle: "Venom Let There Be Carnage", movieImage: UIImage(named:"movie4")!, ratingTitle: "6.4/10 IMDb", genres: [Genres.horror,Genres.mystery,Genres.thriller], movieTime: "1h 47m",videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
-//    
-//    Movie(movieTitle: "The King's Man", movieImage: UIImage(named:"movie5")!, ratingTitle: "8.4/10 IMDb", genres: [Genres.action,Genres.fantasy], movieTime: "2h 13m",videoId: "KusPPRI8ubg", language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
-//    
-//    Movie(movieTitle: "Avatar : The Way Of Water", movieImage: UIImage(named:"movie7")!, ratingTitle: "9.4/10 IMDb", genres: [Genres.scienceFiction,Genres.action,Genres.adventure], movieTime: "2h 55m", videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")]),
-//    
-//    Movie(movieTitle: "Pulp Fiction", movieImage: UIImage(named:"movie6")!, ratingTitle: "9.2/10 IMDb", genres: [Genres.thriller,Genres.crime], movieTime: "3h 18m",videoId: "KusPPRI8ubg",language: "Turkish", rating: "PC-23", description: "Konusu",casts: [Cast(castImage: UIImage(named:"movie1")!, castName: "Tom Holland")])
-//]
-
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
@@ -54,6 +33,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     private func viewModelConfiguration(){
         viewModel.getCategoryItems()
+        viewModel.getGenreItems()
         viewModel.errorCallback = { [weak self] errorMessage in
             print("error",errorMessage)
         }
@@ -90,7 +70,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: view.frame.size.width/2.6, height: view.frame.size.height/2.5)
+        layout.itemSize = CGSize(width: view.frame.size.width/2.1, height: view.frame.size.height/2.5)
         nowShowingCollectionView.collectionViewLayout = layout
     }
 
@@ -99,7 +79,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         popularTableView.delegate = self
         popularTableView.showsVerticalScrollIndicator = false
         popularTableView.register(PopularTableViewCell.nib, forCellReuseIdentifier: PopularTableViewCell.identifier)
-//        popularTableView.backgroundColor = .systemRed
+        popularTableView.backgroundColor = .systemRed
     }
 
     override func viewDidLayoutSubviews() {

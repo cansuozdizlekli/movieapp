@@ -22,5 +22,13 @@ class GenreCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
 
-
+    @IBOutlet weak var genreLabel: UILabel!
+    
+    func configure(text: String) {
+        genreLabel.text = text
+        print("genreler labela gelmis mi",genreLabel.text)
+        genreLabel.layer.cornerRadius = 12
+        genreLabel.layer.masksToBounds = true
+    }
+    
 }

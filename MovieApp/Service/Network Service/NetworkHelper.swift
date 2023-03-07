@@ -24,6 +24,11 @@ class NetworkHelper {
         return baseURL + url + "?api_key=\(apiKey)"
     }
     
+    func requestCastUrl(url: String) -> String {
+        return baseURL + url + "/credits?api_key=\(apiKey)"
+    }
+    
+    
     func getImagePath(url: String) -> String {
         return imageBasePath + url
     }

@@ -10,6 +10,9 @@ import YoutubePlayer_in_WKWebView
 
 class MovieDetailViewController: UIViewController {
     
+    let viewModel = HomeViewModel()
+    var selectedMovie: MovieResult!
+    
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var playerView: WKYTPlayerView!
     @IBOutlet weak var movieNameLabel: UILabel!
@@ -18,10 +21,9 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingTypeLabel: UILabel!
-    
+    @IBOutlet weak var genreCollectionView: UICollectionView!
     @IBOutlet weak var castCollectionView: UICollectionView!
     
-    var selectedMovie: MovieResult!
     
     private let backButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 15, y: 65, width: 50, height: 50))
@@ -34,7 +36,6 @@ class MovieDetailViewController: UIViewController {
         return button
     }()
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,10 @@ class MovieDetailViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true
         playerView.webView?.translatesAutoresizingMaskIntoConstraints = false
-//        playerView.load(withVideoId:selectedMovie.videoId)
+//        playerView.load(withVideoId:selectedMovie.video)
         initUI()
         setupCollectionView()
+        viewModelConfiguration()
         editSize()
         
       
@@ -55,33 +57,13 @@ class MovieDetailViewController: UIViewController {
         
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         detailView.layer.cornerRadius = 10
-//        movieNameLabel.text = selectedMovie.movieTitle
-//        ratingLabel.text = selectedMovie.ratingTitle
-//        lengthLabel.text = selectedMovie.movieTime
-//        languageLabel.text = selectedMovie.language
-//        ratingTypeLabel.text = selectedMovie.rating
-//        descriptionLabel.text = selectedMovie.description
+        movieNameLabel.text = selectedMovie.originalTitle
+        ratingLabel.text = selectedMovie.ratingText
+        lengthLabel.text = selectedMovie.releaseDate
+        languageLabel.text = selectedMovie.originalLanguage
+//        ratingTypeLabel.text = selectedMovie.
+        descriptionLabel.text = selectedMovie.overview
 //
-//        print("turlerr:", selectedMovie.genres)
-//        var place = -60
-//        for genre in selectedMovie.genres {
-//            place = place + 80
-//                print("turler:",genre)
-//            let title: UILabel = {
-//                var label = UILabel()
-//                label = UILabel(frame: CGRect(x: place, y: Int(screenHeight) / 2 - 40, width: 70, height: 20))
-//                label.backgroundColor = .lightestBlue
-//                label.text = genre.title
-//                label.textColor = .secondaryBlue
-//                label.adjustsFontSizeToFitWidth = false
-//                label.textAlignment = .center
-//                label.layer.cornerRadius = 10
-//                label.layer.masksToBounds = true
-//                label.font = UIFont(name: "Mulish-Bold", size: 10)
-//                return label
-//            }()
-//            view.addSubview(title)
-//        }
 //
         
     }
@@ -93,13 +75,35 @@ class MovieDetailViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-//        castCollectionView.delegate = self
-//        castCollectionView.dataSource = self
+        castCollectionView.delegate = self
+        castCollectionView.dataSource = self
         castCollectionView.showsHorizontalScrollIndicator = false
         castCollectionView.backgroundColor = .green
         castCollectionView.register(CastCollectionViewCell.nib, forCellWithReuseIdentifier: CastCollectionViewCell.identifier)
         
+        genreCollectionView.delegate = self
+        genreCollectionView.dataSource = self
+        genreCollectionView.register(GenreCollectionViewCell.nib, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 70, height: 30)
+        genreCollectionView.collectionViewLayout = layout
+        genreCollectionView.reloadData()
        
+    }
+    
+    private func viewModelConfiguration(){
+//        print("bakalm hangi idli filmmis bu",selectedMovie.id)
+        viewModel.getCastItems(movieID: self.selectedMovie.id!)
+        print("balbalbal",viewModel.castNameArray)
+        viewModel.errorCallback = { errorMessage in
+            print("error",errorMessage)
+        }
+        viewModel.successCallback = { [weak self] in
+//            print("balbalbal",self?.viewModel.castNameArray)
+            self?.castCollectionView.reloadData()
+        }
     }
     
     private func editSize () {
@@ -124,26 +128,42 @@ class MovieDetailViewController: UIViewController {
 }
 
 
-//extension MovieDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return selectedMovie.casts.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as? CastCollectionViewCell else {
-//            fatalError()
-//        }
-//        cell.bounds = CGRect(x: 0, y: 0, width: 80, height: 100)
-//
-//        print("cell içi cemil", selectedMovie.casts[indexPath.row])
-//        cell.cellItem = selectedMovie.casts[indexPath.row]
-//
-//        cell.setupItems()
-//
-//        return cell
-//    }
-//
-//
+extension MovieDetailViewController: UICollectionViewDataSource , UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(collectionView == self.castCollectionView) {
+            return viewModel.castItems.count
+        } else {
+            return selectedMovie.genreItems.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(collectionView == self.castCollectionView) {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as? CastCollectionViewCell else {
+                fatalError()
+            }
+            cell.bounds = CGRect(x: 0, y: 0, width: 80, height: 110)
+            cell.configure(text: viewModel.castItems[indexPath.row].name,image: viewModel.castItems[indexPath.row].castImage)
+            print("ay bu ne ya",viewModel.castItems[indexPath.row].name)
+
+    //        print("cell içi cemil", selectedMovie.casts[indexPath.row])
+    //        cell.cellItem = selectedMovie.casts[indexPath.row]
+
+    //        cell.setupItems()
+            
+            return cell
+        } else {
+            guard let cell = genreCollectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else {
+                fatalError()
+            }
+            cell.configure(text: selectedMovie.genreItems[indexPath.item].uppercased())
+            
+            return cell
+        }
+        
+    
+    }
     
 
-//}
+}

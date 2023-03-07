@@ -10,9 +10,28 @@ import Foundation
 protocol HomeManagerProtocol {
     func getGenres(complete: @escaping(([GenreElement]?, Error?)->()))
     func getCategoryMovies(type: MovieCategory, page: Int, complete: @escaping((Movie?, Error?)->()))
+    func getCasts(movieId: Int, complete: @escaping(([CastElement]?, Error?)->()))
 }
 
 class HomeManager : HomeManagerProtocol {
+    func getCasts(movieId: Int, complete: @escaping (([CastElement]?, Error?) -> ())) {
+        var castUrl = HomeEndpoint.cast.path
+        let replaced = castUrl.replacingOccurrences(of: "e//", with: "e/\(String(movieId))/")
+        print("neyi cekiom",replaced)
+        NetworkManager.shared.request(type: Cast.self,
+                                      url: replaced ,
+                                      method: .get) { response in
+            switch response {
+            case .success(let data):
+                print("url ",data)
+                complete(data.cast, nil)
+            case .failure(let error):
+                complete(nil, error)
+            }
+        }
+    }
+    
+    
     static let shared = HomeManager()
     
     func getGenres(complete: @escaping (([GenreElement]?, Error?) -> ())) {
@@ -54,5 +73,6 @@ class HomeManager : HomeManagerProtocol {
         }
     }
     
+   
     
 }

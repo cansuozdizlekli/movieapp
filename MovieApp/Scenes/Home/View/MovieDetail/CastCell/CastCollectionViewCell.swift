@@ -9,7 +9,6 @@ import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell {
     
-//    var cellItem : Cast!
 
     @IBOutlet weak var castImageView: UIImageView!
     @IBOutlet weak var castNameLabel: UILabel!
@@ -32,6 +31,20 @@ class CastCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
        
+    }
+    
+    func configure(text: String, image: String) {
+        castNameLabel.text = text
+        if image.contains("original//") {
+            print("foto var")
+            castImageView.sd_setImage(with: URL(string: image))
+        } else {
+            print("foto yok")
+            castImageView.image = UIImage(named: "anonymous-person-icon")
+        }
+        
+        print("ayayay",image)
+        print("cast name canım",castNameLabel.text)
     }
 
 //    func setupItems() {
