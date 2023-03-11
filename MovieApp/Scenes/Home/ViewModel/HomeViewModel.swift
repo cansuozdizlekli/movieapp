@@ -61,4 +61,11 @@ class HomeViewModel {
             }
         }
     }
+    
+    func getVideoItems(){
+//        manager.get
+    }
+    
+    
+    
 }

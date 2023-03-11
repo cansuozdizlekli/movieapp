@@ -39,7 +39,7 @@ enum HomeEndpoint: String {
         case .upcoming:
             return NetworkHelper.shared.requestUrl(url: HomeEndpoint.upcoming.rawValue)
         case .cast:
-            return NetworkHelper.shared.requestCastUrl(url: HomeEndpoint.cast.rawValue)
+            return NetworkHelper.shared.requestUrlWithId(url: HomeEndpoint.cast.rawValue)
         }
     }
 }

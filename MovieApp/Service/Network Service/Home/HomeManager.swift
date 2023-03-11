@@ -73,6 +73,23 @@ class HomeManager : HomeManagerProtocol {
         }
     }
     
+    func getVideos(movieId: Int, complete: @escaping (([CastElement]?, Error?) -> ())) {
+        var castUrl = HomeEndpoint.cast.path
+        let replaced = castUrl.replacingOccurrences(of: "e//", with: "e/\(String(movieId))/")
+        print("neyi cekiom",replaced)
+        NetworkManager.shared.request(type: Cast.self,
+                                      url: replaced ,
+                                      method: .get) { response in
+            switch response {
+            case .success(let data):
+                print("url ",data)
+                complete(data.cast, nil)
+            case .failure(let error):
+                complete(nil, error)
+            }
+        }
+    }
+    
    
     
 }
