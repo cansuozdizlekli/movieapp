@@ -60,24 +60,12 @@ class CastHandler {
         for item in items {
 //            print("mırmır2",item)
             if(item.knownForDepartment == "Acting"){
-                print("mırmır3",item.name)
+//                print("mırmır3",item.name)
                 castNameArray.append(item.name)
             }
         }
         return castNameArray
     }
-    
-//    func getcastNames(ids: [Int]) -> [String] {
-//        self.items = items
-////        print("mırmır",items.count)
-//        for item in items {
-////            print("mırmır2",item)
-//            if(item.knownForDepartment == "Acting"){
-//                print("mırmır3",item.name)
-//                return item.name
-//            }
-//        }
-//    }
 }
 
 

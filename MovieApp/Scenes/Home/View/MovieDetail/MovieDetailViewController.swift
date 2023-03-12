@@ -39,32 +39,26 @@ class MovieDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .green
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true
-        playerView.webView?.translatesAutoresizingMaskIntoConstraints = false
-//        playerView.load(withVideoId:selectedMovie.video)
         initUI()
         setupCollectionView()
         viewModelConfiguration()
         editSize()
-        
       
     }
     
     private func initUI(){
         view.addSubview(backButton)
-        
+        tabBarController?.tabBar.isHidden = true
+        playerView.webView?.translatesAutoresizingMaskIntoConstraints = false
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         detailView.layer.cornerRadius = 10
         movieNameLabel.text = selectedMovie.originalTitle
         ratingLabel.text = selectedMovie.ratingText
         lengthLabel.text = selectedMovie.releaseDate
         languageLabel.text = selectedMovie.originalLanguage
-//        ratingTypeLabel.text = selectedMovie.
         descriptionLabel.text = selectedMovie.overview
-//
-//
         
     }
     
@@ -84,7 +78,6 @@ class MovieDetailViewController: UIViewController {
         genreCollectionView.delegate = self
         genreCollectionView.dataSource = self
         genreCollectionView.register(GenreCollectionViewCell.nib, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 70, height: 30)
@@ -94,14 +87,18 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func viewModelConfiguration(){
-//        print("bakalm hangi idli filmmis bu",selectedMovie.id)
         viewModel.getCastItems(movieID: self.selectedMovie.id!)
-        print("balbalbal",viewModel.castNameArray)
+        viewModel.getVideoItems(movieID: self.selectedMovie.id!)
+        
         viewModel.errorCallback = { errorMessage in
             print("error",errorMessage)
         }
         viewModel.successCallback = { [weak self] in
-//            print("balbalbal",self?.viewModel.castNameArray)
+            if let videoKey = self?.viewModel.videoLinkArray.last {
+                self?.playerView.load(withVideoId: videoKey)
+                print("balbalbal",videoKey)
+            }
+                           
             self?.castCollectionView.reloadData()
         }
     }
@@ -144,13 +141,9 @@ extension MovieDetailViewController: UICollectionViewDataSource , UICollectionVi
                 fatalError()
             }
             cell.bounds = CGRect(x: 0, y: 0, width: 80, height: 110)
-            cell.configure(text: viewModel.castItems[indexPath.row].name,image: viewModel.castItems[indexPath.row].castImage)
+            cell.configure(text: viewModel.castItems[indexPath.row].name,image:
+                            viewModel.castItems[indexPath.row].castImage)
             print("ay bu ne ya",viewModel.castItems[indexPath.row].name)
-
-    //        print("cell içi cemil", selectedMovie.casts[indexPath.row])
-    //        cell.cellItem = selectedMovie.casts[indexPath.row]
-
-    //        cell.setupItems()
             
             return cell
         } else {

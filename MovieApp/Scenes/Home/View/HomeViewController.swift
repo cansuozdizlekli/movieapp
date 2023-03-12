@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: view.frame.size.width/2.1, height: view.frame.size.height/2.5)
+        layout.itemSize = CGSize(width: view.frame.size.width/2.25, height: view.frame.size.height/2.6)
         nowShowingCollectionView.collectionViewLayout = layout
     }
 

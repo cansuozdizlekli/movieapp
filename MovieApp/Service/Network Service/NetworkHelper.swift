@@ -28,6 +28,11 @@ class NetworkHelper {
         return baseURL + url + "/credits?api_key=\(apiKey)"
     }
     
+    func newRequestUrl(url: String, movieId :Int) -> String {
+        print(baseURL + "movie/" + String(movieId) + url + "?api_key=\(apiKey)")
+        return baseURL + "movie/" + String(movieId) + url + "?api_key=\(apiKey)"
+    }
+    
     
     func getImagePath(url: String) -> String {
         return imageBasePath + url

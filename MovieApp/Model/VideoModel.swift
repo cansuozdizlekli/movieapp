@@ -31,3 +31,26 @@ struct VideoResult: Codable {
         case site, size, type, official, id
     }
 }
+
+class VideoHandler {
+    static let shared = VideoHandler()
+    
+    private var items = [VideoResult]()
+    
+    func setVideoItems(items: [VideoResult]) -> [String] {
+        var videoKeyArray = [String]()
+        self.items = items
+//        print("mırmır",items.count)
+        for item in items {
+            if(item.site == "YouTube") {
+                if(item.type == "Trailer"){
+                    videoKeyArray.append(item.key)
+                    print("mırmır2",item)
+                }
+            }
+        }
+        print("mırmır2",videoKeyArray)
+        return videoKeyArray
+    }
+}
+

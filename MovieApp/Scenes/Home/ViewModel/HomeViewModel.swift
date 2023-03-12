@@ -12,7 +12,9 @@ class HomeViewModel {
     var movieItems = [MovieResult]()
     var genreItems = [GenreElement]()
     var castItems = [CastElement]()
+    var videoItems = [VideoResult]()
     var castNameArray = [String]()
+    var videoLinkArray = [String]()
     var movie : Movie?
     var errorCallback : ((String)->())?
     var successCallback : (()->())?
@@ -48,22 +50,29 @@ class HomeViewModel {
     }
     
     func getCastItems(movieID: Int){
-        
         manager.getCasts(movieId: movieID) { [weak self] items, error in
-            var castNameArray = [String]()
             if let error = error {
                 self?.errorCallback?(error.localizedDescription)
             } else {
                 self?.castItems = items ?? []
-                castNameArray = CastHandler.shared.setItems(items: items ?? [])
-                print("balbal",castNameArray)
+                self?.castNameArray = CastHandler.shared.setItems(items: items ?? [])
+//                print("balbal",castNameArray)
                 self?.successCallback?()
             }
         }
     }
     
-    func getVideoItems(){
-//        manager.get
+    func getVideoItems(movieID: Int){
+        manager.getVideos(movieId: movieID) { [weak self] items, error in
+            if let error = error {
+                self?.errorCallback?(error.localizedDescription)
+            } else {
+                self?.videoItems = items ?? []
+                self?.videoLinkArray = VideoHandler.shared.setVideoItems(items: items ?? [])
+                print("balbal",movieID)
+                self?.successCallback?()
+            }
+        }
     }
     
     
