@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol SideMenuVCDelegate: AnyObject {
+    func didTapMenuButton()
+}
+
 class SideMenuVC: UIViewController {
     
-    var movies = [Movie]()
+    weak var delegate: SideMenuVCDelegate?
+    let viewModel = GenreViewModel()
     
+    var movies = [Movie]()
     var menus : [Genres] = [Genres.action, .animation, .adventure, .comedy, .crime, .documentary, .drama, .family, .fantasy, .horror, .history, .music, .mystery, .romance, .scienceFiction, .thriller, .tvMovie, .western, .war]
-   
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,6 +25,8 @@ class SideMenuVC: UIViewController {
         super.viewDidLoad()
         setUpUI()
         setupTableView()
+        viewModel.getGenreItems()
+        
         
     }
     
@@ -31,6 +38,7 @@ class SideMenuVC: UIViewController {
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
         
+        
     }
     
     private func setupTableView() {
@@ -38,8 +46,10 @@ class SideMenuVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
-
+    
+    @objc func didTapMenuButton(){
+        didTapMenuButton()
+    }
 }
 
 extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
@@ -66,6 +76,11 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? MovieTypeTableViewCell {
+            print("hangi tür gösterilcek",cell.movieGenreLabel.text!)
+            delegate?.didTapMenuButton()
+            
+        }
         
     }
     

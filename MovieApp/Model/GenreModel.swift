@@ -24,6 +24,7 @@ class GenreHandler {
     
     func setItems(items: [GenreElement]) {
         self.items = items
+        print(items)
     }
     
     func getItemTitles(ids: [Int]) -> [String] {
@@ -34,4 +35,16 @@ class GenreHandler {
         }
         return titles
     }
+    
+    func x(items: [GenreElement] ) -> [String] {
+        var titles = [String]()
+        self.items = items
+        for element in items {
+            print("elementsss",element.name)
+            titles.append(element.name ?? "")
+        }
+        return titles
+    }
+    
+    
 }

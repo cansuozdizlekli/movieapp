@@ -34,7 +34,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7Z-WH-QBT">
-                                    <rect key="frame" x="20" y="347.66666666666669" width="361" height="19"/>
+                                    <rect key="frame" x="20" y="359.66666666666669" width="361" height="19"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="a6N-OU-vvj"/>
                                     </constraints>
@@ -43,7 +43,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pfS-dr-ADe">
-                                    <rect key="frame" x="20" y="21.666666666666657" width="361" height="326.00000000000006"/>
+                                    <rect key="frame" x="20" y="21.666666666666657" width="361" height="326"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="326" id="DKL-gf-FyK"/>
@@ -57,7 +57,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="keq-ic-DgL">
-                                    <rect key="frame" x="20" y="366.66666666666674" width="361" height="443.33333333333326"/>
+                                    <rect key="frame" x="20" y="378.66666666666674" width="361" height="431.33333333333326"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoB-Pg-kXz">
@@ -71,7 +71,7 @@
                             <constraints>
                                 <constraint firstItem="keq-ic-DgL" firstAttribute="top" secondItem="o7Z-WH-QBT" secondAttribute="bottom" id="4XG-fM-zpx"/>
                                 <constraint firstItem="DoB-Pg-kXz" firstAttribute="leading" secondItem="rEZ-Qv-LzL" secondAttribute="leading" constant="20" symbolic="YES" id="9pV-nU-kqD"/>
-                                <constraint firstItem="o7Z-WH-QBT" firstAttribute="top" secondItem="pfS-dr-ADe" secondAttribute="bottom" id="BIY-Rq-qJS"/>
+                                <constraint firstItem="o7Z-WH-QBT" firstAttribute="top" secondItem="pfS-dr-ADe" secondAttribute="bottom" constant="12" id="BIY-Rq-qJS"/>
                                 <constraint firstAttribute="trailing" secondItem="pfS-dr-ADe" secondAttribute="trailing" constant="12" id="ET2-Sd-aQE"/>
                                 <constraint firstItem="pfS-dr-ADe" firstAttribute="top" secondItem="DoB-Pg-kXz" secondAttribute="bottom" id="EnL-3k-h30"/>
                                 <constraint firstAttribute="bottom" secondItem="keq-ic-DgL" secondAttribute="bottom" constant="42" id="Gew-RI-eLI"/>

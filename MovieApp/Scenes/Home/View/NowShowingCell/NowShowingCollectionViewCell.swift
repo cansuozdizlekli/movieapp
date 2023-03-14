@@ -14,7 +14,7 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     private let movieImage: UIImageView = {
         let movieImage = UIImageView(frame: CGRect(x: 0, y: 15, width: 160, height: 250))
         movieImage.translatesAutoresizingMaskIntoConstraints = false
-        movieImage.contentMode = .scaleAspectFill
+        movieImage.contentMode = .scaleToFill
         movieImage.layer.cornerRadius = 5
         movieImage.layer.masksToBounds = true
         return movieImage
@@ -85,7 +85,6 @@ class NowShowingCollectionViewCell: UICollectionViewCell {
     func setupItems() {
         self.movieTitle.text = cellItem.originalTitle
         self.movieImage.sd_setImage(with: URL(string: cellItem.posterImage))
-//        self.movieImage.image = cellItem.movieImage
         self.ratingTitle.text = "\(String(format: "%.1f", cellItem.voteAverage!)) / 10 IMDB"
         
     }

@@ -9,6 +9,7 @@ import Foundation
 
 class HomeViewModel {
     let manager = HomeManager.shared
+    var nowPlayingMovieItems = [MovieResult]()
     var movieItems = [MovieResult]()
     var genreItems = [GenreElement]()
     var castItems = [CastElement]()
@@ -19,12 +20,26 @@ class HomeViewModel {
     var errorCallback : ((String)->())?
     var successCallback : (()->())?
     
-    var movieCategory: MovieCategory = .popular
+    
     
     var movieId: Int = 12
     
-    func getCategoryItems(){
-        manager.getCategoryMovies(type: movieCategory, page: (movie?.page ?? 0) + 1) { [weak self] movie, error in
+    func getNowPlayingItems(MovieFilterType: MovieCategory){
+        manager.getCategoryMovies(type: MovieFilterType, page: (movie?.page ?? 0) + 1) { [weak self] movie, error in
+            if let error = error {
+                self?.errorCallback?(error.localizedDescription)
+            } else {
+                self?.movie = movie
+                if let nowPlayingMovieItems = movie?.results, !nowPlayingMovieItems.isEmpty {
+                    self?.nowPlayingMovieItems.append(contentsOf: nowPlayingMovieItems)
+                }
+                self?.successCallback?()
+            }
+        }
+    }
+    
+    func getCategoryItems(MovieFilterType: MovieCategory){
+        manager.getCategoryMovies(type: MovieFilterType, page: (movie?.page ?? 0) + 1) { [weak self] movie, error in
             if let error = error {
                 self?.errorCallback?(error.localizedDescription)
             } else {
@@ -44,7 +59,7 @@ class HomeViewModel {
             } else {
                 self?.genreItems = items ?? []
                 GenreHandler.shared.setItems(items: items ?? [])
-                self?.getCategoryItems()
+                self?.getCategoryItems(MovieFilterType: .popular)
             }
         }
     }

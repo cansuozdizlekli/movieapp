@@ -14,7 +14,7 @@ class ContainerVC: UIViewController {
         case closed
     }
     
-    private var menuState: MenuState = .closed
+    var menuState: MenuState = .closed
     
     let menuVC = SideMenuVC()
     let homeVC = HomeViewController()
@@ -22,14 +22,13 @@ class ContainerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .systemBlue
         view.backgroundColor = .white
         addChildVCs()
     }
     
     private func addChildVCs(){
         // MENU
-        
+        menuVC.delegate = self
         addChild(menuVC)
         view.addSubview(menuVC.view)
         menuVC.didMove(toParent: self)
@@ -45,8 +44,10 @@ class ContainerVC: UIViewController {
     
 }
 
-extension ContainerVC : HomeViewControllerDelegate {
+extension ContainerVC : HomeViewControllerDelegate , SideMenuVCDelegate  {
+    
     func didTapMenuButton() {
+        print("did tap menu button")
         switch menuState {
         case .closed:
             //opened it
@@ -77,4 +78,6 @@ extension ContainerVC : HomeViewControllerDelegate {
         
         }
     }
+    
+    
 }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject {
     func didTapMenuButton()
@@ -26,13 +25,18 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         super.viewDidLoad()
         title = "Movie App"
         initUI()
-        viewModelConfiguration()
         setupCollectionView()
         setupTableView()
+        viewModelConfiguration()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func viewModelConfiguration(){
-        viewModel.getCategoryItems()
+        viewModel.getNowPlayingItems(MovieFilterType: .nowPlaying)
+        viewModel.getCategoryItems(MovieFilterType: .topRated)
         viewModel.getGenreItems()
         viewModel.errorCallback = { [weak self] errorMessage in
             print("error",errorMessage)
@@ -41,7 +45,9 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
             self?.nowShowingCollectionView.reloadData()
             self?.popularTableView.reloadData()
         }
+        
     }
+   
     
 
     
@@ -82,25 +88,20 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         popularTableView.backgroundColor = .systemRed
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-    }
-
 }
 
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.movieItems.count
+        return viewModel.nowPlayingMovieItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NowShowingCollectionViewCell.identifier, for: indexPath) as? NowShowingCollectionViewCell else {
             fatalError()
         }
-        cell.cellItem = viewModel.movieItems[indexPath.row]
+        cell.cellItem = viewModel.nowPlayingMovieItems[indexPath.row]
         print("cansu1",cell.cellItem.originalTitle)
 
         cell.setupItems()
@@ -140,6 +141,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         print("cansu2",cell.cellItem.originalTitle as Any)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MovieDetailViewController()
+        if let cell = tableView.cellForRow(at: indexPath) as? PopularTableViewCell {
+            if cell.isSelected {
+                vc.selectedMovie = cell.cellItem
+            }
+        }
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
