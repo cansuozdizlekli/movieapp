@@ -36,7 +36,7 @@ class GenreHandler {
         return titles
     }
     
-    func x(items: [GenreElement] ) -> [String] {
+    func getAllGenreTitles(items: [GenreElement] ) -> [String] {
         var titles = [String]()
         self.items = items
         for element in items {

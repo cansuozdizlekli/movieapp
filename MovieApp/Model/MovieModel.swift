@@ -76,5 +76,8 @@ struct MovieResult: Codable, MovieCellProtocol {
         case creditID = "credit_id"
         case order, department, job
     }
+    
+
+    
 }
 

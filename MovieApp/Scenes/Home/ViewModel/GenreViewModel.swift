@@ -17,14 +17,14 @@ class GenreViewModel {
     
     func getGenreItems() {
         manager.getGenres { [weak self] items, error in
-            
             if let error = error {
                 self?.errorCallback?(error.localizedDescription)
             } else {
                 self?.genreItems = items ?? []
                 GenreHandler.shared.setItems(items: items ?? [])
-                self?.genreNameList = GenreHandler.shared.x(items: items ?? [])
+                self?.genreNameList = GenreHandler.shared.getAllGenreTitles(items: self?.genreItems ?? [])
                 print("cemos",self?.genreNameList)
+                self?.successCallback?()
             }
         }
     }

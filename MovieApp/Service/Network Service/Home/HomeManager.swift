@@ -17,7 +17,7 @@ class HomeManager : HomeManagerProtocol {
     func getCasts(movieId: Int, complete: @escaping (([CastElement]?, Error?) -> ())) {
         let castUrl = HomeEndpoint.cast.path
         let replaced = castUrl.replacingOccurrences(of: "e//", with: "e/\(String(movieId))/")
-        print("neyi cekiom",replaced)
+//        print("neyi cekiom",replaced)
         NetworkManager.shared.request(type: Cast.self,
                                       url: replaced ,
                                       method: .get) { response in
@@ -76,9 +76,27 @@ class HomeManager : HomeManagerProtocol {
     func getVideos(movieId: Int, complete: @escaping (([VideoResult]?, Error?) -> ())) {
         let videoUrl = HomeEndpoint.video.path
         let replaced = videoUrl.replacingOccurrences(of: "e/12", with: "e/\(String(movieId))/")
-        print("neyi cekiom",replaced)
+//        print("neyi cekiom",replaced)
         NetworkManager.shared.request(type: Video.self,
                                       url: replaced ,
+                                      method: .get) { response in
+            switch response {
+            case .success(let data):
+                print("url ",data)
+                complete(data.results, nil)
+            case .failure(let error):
+                complete(nil, error)
+            }
+        }
+    }
+    
+    
+    func getGenreFilters(genreId: Int, complete: @escaping (([GenreFilterResult]?, Error?) -> ())) {
+        var url = HomeEndpoint.filter.path
+        url = url + "&with_genres=" + String(genreId)
+        print("neyi cekiom",url)
+        NetworkManager.shared.request(type: GenreFilter.self,
+                                      url: url ,
                                       method: .get) { response in
             switch response {
             case .success(let data):

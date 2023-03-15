@@ -15,6 +15,8 @@ class ContainerVC: UIViewController {
     }
     
     var menuState: MenuState = .closed
+    var isGenreSelected : Bool = false
+    var SelectedGenre : String = ""
     
     let menuVC = SideMenuVC()
     let homeVC = HomeViewController()
@@ -59,6 +61,7 @@ extension ContainerVC : HomeViewControllerDelegate , SideMenuVCDelegate  {
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opened
+                    print("isgenrem menu acıldı ",self?.SelectedGenre)
                 }
             }
 
@@ -72,7 +75,12 @@ extension ContainerVC : HomeViewControllerDelegate , SideMenuVCDelegate  {
                 
             } completion: { [weak self] done in
                 if done {
+                    self?.SelectedGenre = self?.menuVC.chosenGenre ?? ""
+//                    print("isgenrem menu",self?.menuVC.chosenGenre)
+                    self?.homeVC.chosenGenre = self?.menuVC.chosenGenre ?? ""
+                    print("isgenrem menu",self?.homeVC.chosenGenre)
                     self?.menuState = .closed
+//                    print("isgenrem menu kapandı",self?.SelectedGenre)
                 }
             }
         

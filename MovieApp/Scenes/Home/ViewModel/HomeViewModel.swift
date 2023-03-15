@@ -10,6 +10,7 @@ import Foundation
 class HomeViewModel {
     let manager = HomeManager.shared
     var nowPlayingMovieItems = [MovieResult]()
+    var selectedGenreItems = [GenreFilterResult]()
     var movieItems = [MovieResult]()
     var genreItems = [GenreElement]()
     var castItems = [CastElement]()
@@ -19,8 +20,6 @@ class HomeViewModel {
     var movie : Movie?
     var errorCallback : ((String)->())?
     var successCallback : (()->())?
-    
-    
     
     var movieId: Int = 12
     
@@ -84,10 +83,23 @@ class HomeViewModel {
             } else {
                 self?.videoItems = items ?? []
                 self?.videoLinkArray = VideoHandler.shared.setVideoItems(items: items ?? [])
-                print("balbal",movieID)
                 self?.successCallback?()
             }
         }
+    }
+    
+    
+    func getSelectedGenreItems(Genre: Int){
+        manager.getGenreFilters(genreId: Genre) { [weak self] results, error in
+            if let error = error {
+                self?.errorCallback?(error.localizedDescription)
+            } else {
+                self?.selectedGenreItems = results ?? []
+                print("hayy",self?.selectedGenreItems)
+                self?.successCallback?()
+            }
+        }
+ 
     }
     
     

@@ -72,7 +72,7 @@ class MovieDetailViewController: UIViewController {
         castCollectionView.delegate = self
         castCollectionView.dataSource = self
         castCollectionView.showsHorizontalScrollIndicator = false
-        castCollectionView.backgroundColor = .green
+//        castCollectionView.backgroundColor = .green
         castCollectionView.register(CastCollectionViewCell.nib, forCellWithReuseIdentifier: CastCollectionViewCell.identifier)
         
         genreCollectionView.delegate = self

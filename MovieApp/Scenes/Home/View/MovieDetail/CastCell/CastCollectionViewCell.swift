@@ -41,9 +41,10 @@ class CastCollectionViewCell: UICollectionViewCell {
         } else {
             print("foto yok")
             castImageView.image = UIImage(named: "anonymous-person-icon")
+            castImageView.layer.cornerRadius = 12
+            castImageView.layer.masksToBounds = true
         }
         
-        print("ayayay",image)
         print("cast name canım",castNameLabel.text)
     }
 

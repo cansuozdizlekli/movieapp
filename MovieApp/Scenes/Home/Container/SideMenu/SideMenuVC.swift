@@ -12,21 +12,21 @@ protocol SideMenuVCDelegate: AnyObject {
 }
 
 class SideMenuVC: UIViewController {
+
+    var chosenGenre = ""
     
     weak var delegate: SideMenuVCDelegate?
     let viewModel = GenreViewModel()
-    
+    var genreNames = [String]()
     var movies = [Movie]()
-    var menus : [Genres] = [Genres.action, .animation, .adventure, .comedy, .crime, .documentary, .drama, .family, .fantasy, .horror, .history, .music, .mystery, .romance, .scienceFiction, .thriller, .tvMovie, .western, .war]
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        viewModelConfiguration()
         setupTableView()
-        viewModel.getGenreItems()
-        
         
     }
     
@@ -37,8 +37,6 @@ class SideMenuVC: UIViewController {
         view.frame.size.width = screenWidth - 133
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
-        
-        
     }
     
     private func setupTableView() {
@@ -50,13 +48,26 @@ class SideMenuVC: UIViewController {
     @objc func didTapMenuButton(){
         didTapMenuButton()
     }
+    
+    private func viewModelConfiguration(){
+        viewModel.getGenreItems()
+        viewModel.errorCallback = { [weak self] errorMessage in
+            print("error",errorMessage)
+        }
+        viewModel.successCallback = { [weak self] in
+//            print("kac tur varmıss",self?.viewModel.genreNameList.count)
+            self?.genreNames = self?.viewModel.genreNameList ?? []
+            self?.tableView.reloadData()
+        }
+        
+    }
 }
 
 extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(menus.count)
-        return menus.count
+//        print("kac tur varmıss table view ici",genreNames.count)
+        return genreNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,9 +75,8 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         
-        let menu = menus[indexPath.row]
-        print("deneme",menu.title)
-        cell.movieGenreLabel?.text = menu.title
+        let genreItem = genreNames[indexPath.row]
+        cell.movieGenreLabel.text = genreItem.uppercased()
         
         let backgroundColorView = UIView()
         backgroundColorView.backgroundColor = UIColor.lightestBlue
@@ -78,6 +88,11 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? MovieTypeTableViewCell {
             print("hangi tür gösterilcek",cell.movieGenreLabel.text!)
+            let vc = ContainerVC()
+            chosenGenre = cell.movieGenreLabel.text!
+            vc.isGenreSelected = true
+            vc.SelectedGenre = cell.movieGenreLabel.text!
+            print("isgenrem",vc.SelectedGenre)
             delegate?.didTapMenuButton()
             
         }

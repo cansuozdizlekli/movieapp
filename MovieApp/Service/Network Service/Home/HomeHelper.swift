@@ -24,6 +24,7 @@ enum HomeEndpoint: String {
     case upcoming = "movie/upcoming"
     case cast = "movie/"
     case video = "/videos"
+    case filter = "discover/movie"
 
     var path: String {
         switch self {
@@ -43,6 +44,8 @@ enum HomeEndpoint: String {
             return NetworkHelper.shared.requestUrlWithId(url: HomeEndpoint.cast.rawValue)
         case .video:
             return NetworkHelper.shared.newRequestUrl(url: HomeEndpoint.video.rawValue, movieId: 12)
+        case .filter:
+            return NetworkHelper.shared.requestUrl(url: HomeEndpoint.filter.rawValue)
         }
     }
 }

@@ -15,7 +15,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     let viewModel = HomeViewModel()
-    
+    var chosenGenre : String = ""
     weak var delegate: HomeViewControllerDelegate?
     @IBOutlet weak var nowPlayingLabel: UILabel!
     @IBOutlet weak var popularLabel: UILabel!
@@ -26,17 +26,19 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         title = "Movie App"
         initUI()
         setupCollectionView()
-        setupTableView()
         viewModelConfiguration()
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        
     }
     
     private func viewModelConfiguration(){
         viewModel.getNowPlayingItems(MovieFilterType: .nowPlaying)
         viewModel.getCategoryItems(MovieFilterType: .topRated)
+        viewModel.getSelectedGenreItems(Genre: 16)
         viewModel.getGenreItems()
         viewModel.errorCallback = { [weak self] errorMessage in
             print("error",errorMessage)
@@ -47,8 +49,6 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         }
         
     }
-   
-    
 
     
     private func initUI(){
@@ -66,6 +66,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     @objc func didTapMenuButton(){
         delegate?.didTapMenuButton()
+        self.popularTableView.reloadData()
     }
     
     private func setupCollectionView() {
@@ -87,6 +88,8 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         popularTableView.register(PopularTableViewCell.nib, forCellReuseIdentifier: PopularTableViewCell.identifier)
         popularTableView.backgroundColor = .systemRed
     }
+    
+
 
 }
 
@@ -134,12 +137,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         cell.delegate = self
-        cell.cellItem = viewModel.movieItems[indexPath.row]
-        let backgroundColorView = UIView()
-        backgroundColorView.backgroundColor = UIColor.clear
-        cell.selectedBackgroundView = backgroundColorView
+        print("genre secili mş",chosenGenre)
+        if (chosenGenre != ""){
+            for genre in viewModel.movieItems[indexPath.row].genreItems {
+                if (genre.uppercased() == chosenGenre) {
+                    cell.cellItem = viewModel.movieItems[indexPath.row]
+                    return cell
+                }else{
+                    
+                }
+            }
+        }else {
+            cell.cellItem = viewModel.movieItems[indexPath.row]
+            return cell
+        }
+        
+//        let backgroundColorView = UIView()
+//        backgroundColorView.backgroundColor = UIColor.clear
+//        cell.selectedBackgroundView = backgroundColorView
 
-        print("cansu2",cell.cellItem.originalTitle as Any)
         return cell
     }
     
