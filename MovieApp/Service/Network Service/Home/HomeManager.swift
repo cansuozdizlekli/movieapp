@@ -23,7 +23,7 @@ class HomeManager : HomeManagerProtocol {
                                       method: .get) { response in
             switch response {
             case .success(let data):
-                print("url ",data)
+//                print("url ",data)
                 complete(data.cast, nil)
             case .failure(let error):
                 complete(nil, error)
@@ -82,7 +82,7 @@ class HomeManager : HomeManagerProtocol {
                                       method: .get) { response in
             switch response {
             case .success(let data):
-                print("url ",data)
+//                print("url ",data)
                 complete(data.results, nil)
             case .failure(let error):
                 complete(nil, error)
@@ -91,11 +91,11 @@ class HomeManager : HomeManagerProtocol {
     }
     
     
-    func getGenreFilters(genreId: Int, complete: @escaping (([GenreFilterResult]?, Error?) -> ())) {
+    func getGenreFilters(genreId: Int, complete: @escaping (([MovieResult]?, Error?) -> ())) {
         var url = HomeEndpoint.filter.path
         url = url + "&with_genres=" + String(genreId)
         print("neyi cekiom",url)
-        NetworkManager.shared.request(type: GenreFilter.self,
+        NetworkManager.shared.request(type: Movie.self,
                                       url: url ,
                                       method: .get) { response in
             switch response {

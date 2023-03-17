@@ -15,7 +15,8 @@ protocol HomeViewControllerDelegate: AnyObject {
 class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     let viewModel = HomeViewModel()
-    var chosenGenre : String = ""
+    var chosenGenreId : Int = 0
+    var chosenGenreName : String = ""
     weak var delegate: HomeViewControllerDelegate?
     @IBOutlet weak var nowPlayingLabel: UILabel!
     @IBOutlet weak var popularLabel: UILabel!
@@ -32,13 +33,13 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
-        
     }
+    
     
     private func viewModelConfiguration(){
         viewModel.getNowPlayingItems(MovieFilterType: .nowPlaying)
         viewModel.getCategoryItems(MovieFilterType: .topRated)
-        viewModel.getSelectedGenreItems(Genre: 16)
+        viewModel.getSelectedGenreItems(Genre: chosenGenreId)
         viewModel.getGenreItems()
         viewModel.errorCallback = { [weak self] errorMessage in
             print("error",errorMessage)
@@ -57,7 +58,7 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Icons.sideMenuIcon.image,
                                                            style: UIBarButtonItem.Style.done,
                                                            target: self,
-                                                           action: #selector(didTapMenuButton))
+                                                           action: #selector(didClickMenuButton))
         
         nowPlayingLabel.textColor = .primaryBlue
         popularLabel.textColor = .primaryBlue
@@ -66,8 +67,21 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
     
     @objc func didTapMenuButton(){
         delegate?.didTapMenuButton()
-        self.popularTableView.reloadData()
     }
+    
+    
+    @objc func didClickMenuButton(){
+        didTapMenuButton()
+        print("basıldı")
+        if self.chosenGenreId != 0 {
+            viewModel.getSelectedGenreItems(Genre: self.chosenGenreId)
+            popularLabel.text = chosenGenreName.self
+            popularTableView.reloadData()
+        }
+    }
+    
+    
+    
     
     private func setupCollectionView() {
         nowShowingCollectionView.delegate = self
@@ -89,8 +103,6 @@ class HomeViewController: UIViewController, PopularTableViewCellDelegate {
         popularTableView.backgroundColor = .systemRed
     }
     
-
-
 }
 
 
@@ -127,7 +139,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.movieItems.count
     }
@@ -137,20 +149,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError()
         }
         cell.delegate = self
-        print("genre secili mş",chosenGenre)
-        if (chosenGenre != ""){
-            for genre in viewModel.movieItems[indexPath.row].genreItems {
-                if (genre.uppercased() == chosenGenre) {
-                    cell.cellItem = viewModel.movieItems[indexPath.row]
-                    return cell
-                }else{
-                    
-                }
-            }
-        }else {
-            cell.cellItem = viewModel.movieItems[indexPath.row]
-            return cell
-        }
+        cell.cellItem = viewModel.movieItems[indexPath.row]
+
         
 //        let backgroundColorView = UIView()
 //        backgroundColorView.backgroundColor = UIColor.clear
@@ -178,7 +178,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
 
 }
+
 

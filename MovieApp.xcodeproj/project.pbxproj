@@ -104,7 +104,6 @@
 		8DE683F529C2419A00ECC3FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F429C2419A00ECC3FD /* FirebaseFirestore */; };
 		8DE683F729C2419A00ECC3FD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F629C2419A00ECC3FD /* FirebaseFirestoreSwift */; };
 		8DE683F929C2419A00ECC3FD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F829C2419A00ECC3FD /* FirebaseStorage */; };
-		8DE683FB29C280DC00ECC3FD /* GenreFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE683FA29C280DC00ECC3FD /* GenreFilterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -198,7 +197,6 @@
 		8DE683E629C1097D00ECC3FD /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		8DE683EB29C10A3000ECC3FD /* SideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
 		8DE683ED29C23FD000ECC3FD /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
-		8DE683FA29C280DC00ECC3FD /* GenreFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreFilterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,7 +358,6 @@
 				8D125D72297717E6001F4CB9 /* GenreModel.swift */,
 				8D700DCF29B67EA800DCE72D /* CastModel.swift */,
 				8D700DD129B7E85800DCE72D /* VideoModel.swift */,
-				8DE683FA29C280DC00ECC3FD /* GenreFilterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -755,7 +752,6 @@
 				8DB7ED4129460EF400C5B8EA /* MovieModel.swift in Sources */,
 				8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */,
 				8D88DBD62944C09100D29867 /* Icon.swift in Sources */,
-				8DE683FB29C280DC00ECC3FD /* GenreFilterModel.swift in Sources */,
 				8D88DBD22944BD0B00D29867 /* SettingsVC.swift in Sources */,
 				8D125D6C2976E5F4001F4CB9 /* HomeHelper.swift in Sources */,
 			);

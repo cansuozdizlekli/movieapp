@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel {
     let manager = HomeManager.shared
     var nowPlayingMovieItems = [MovieResult]()
-    var selectedGenreItems = [GenreFilterResult]()
+    var selectedGenreItems = [MovieResult]()
     var movieItems = [MovieResult]()
     var genreItems = [GenreElement]()
     var castItems = [CastElement]()
@@ -94,8 +94,11 @@ class HomeViewModel {
             if let error = error {
                 self?.errorCallback?(error.localizedDescription)
             } else {
-                self?.selectedGenreItems = results ?? []
-                print("hayy",self?.selectedGenreItems)
+                self?.movieItems = results ?? []
+                print("hayy",self?.movieItems)
+                if let movieItems = self?.movie?.results, !movieItems.isEmpty {
+                    self?.movieItems.append(contentsOf: movieItems)
+                }
                 self?.successCallback?()
             }
         }

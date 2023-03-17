@@ -46,5 +46,15 @@ class GenreHandler {
         return titles
     }
     
+    func getAllGenreIds(items: [GenreElement] ) -> [Int] {
+        var genreIds = [Int]()
+        self.items = items
+        for element in items {
+            print("elementsss",element.id)
+            genreIds.append(element.id ?? 0)
+        }
+        return genreIds
+    }
+    
     
 }

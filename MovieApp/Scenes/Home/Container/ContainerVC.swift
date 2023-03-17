@@ -7,17 +7,23 @@
 
 import UIKit
 
+protocol ContainerVCDelegate: AnyObject {
+    func reloadTableView()
+}
+
+
 class ContainerVC: UIViewController {
     
     enum MenuState {
         case opened
         case closed
     }
-    
+    weak var delegate: ContainerVCDelegate?
     var menuState: MenuState = .closed
     var isGenreSelected : Bool = false
-    var SelectedGenre : String = ""
-    
+    var SelectedGenreId : Int = 0
+    var SelectedGenreName : String = ""
+    var homeViewModel = HomeViewModel()
     let menuVC = SideMenuVC()
     let homeVC = HomeViewController()
     var navVC: UINavigationController?
@@ -50,37 +56,38 @@ extension ContainerVC : HomeViewControllerDelegate , SideMenuVCDelegate  {
     
     func didTapMenuButton() {
         print("did tap menu button")
+        self.SelectedGenreId = (self.menuVC.chosenGenreId)
+        self.homeVC.chosenGenreId = (self.menuVC.chosenGenreId)
+        self.homeVC.chosenGenreName = (self.menuVC.chosenGenreName)
         switch menuState {
         case .closed:
             //opened it
             tabBarController?.tabBar.isHidden = true
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0,options: .curveEaseInOut) {
-                
                 self.navVC?.view.frame.origin.x = self.homeVC.view.frame.size.width - 133
-                
             } completion: { [weak self] done in
                 if done {
                     self?.menuState = .opened
-                    print("isgenrem menu acıldı ",self?.SelectedGenre)
                 }
             }
 
         case .opened:
             //closed it
             tabBarController?.tabBar.isHidden = false
-            
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0,options: .curveEaseInOut) {
-                
                 self.navVC?.view.frame.origin.x = 0
-                
             } completion: { [weak self] done in
                 if done {
-                    self?.SelectedGenre = self?.menuVC.chosenGenre ?? ""
-//                    print("isgenrem menu",self?.menuVC.chosenGenre)
-                    self?.homeVC.chosenGenre = self?.menuVC.chosenGenre ?? ""
-                    print("isgenrem menu",self?.homeVC.chosenGenre)
+                    self?.SelectedGenreId = (self?.menuVC.chosenGenreId)!
+                    self?.homeVC.chosenGenreId = (self?.menuVC.chosenGenreId)!
                     self?.menuState = .closed
-//                    print("isgenrem menu kapandı",self?.SelectedGenre)
+                    if self?.SelectedGenreId != 0 {
+                        print("caslıo",self?.SelectedGenreName)
+                        self?.homeViewModel.getSelectedGenreItems(Genre: self?.SelectedGenreId ?? 0)
+                        self?.homeVC.popularTableView.reloadData()
+//                        self?.homeVC.popularLabel.text = self?.SelectedGenreName
+                        
+                    }
                 }
             }
         

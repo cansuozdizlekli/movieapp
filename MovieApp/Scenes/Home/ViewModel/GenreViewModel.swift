@@ -14,6 +14,7 @@ class GenreViewModel {
     var successCallback : (()->())?
     var genreItems = [GenreElement]()
     var genreNameList = [String]()
+    var genreIdList = [Int]()
     
     func getGenreItems() {
         manager.getGenres { [weak self] items, error in
@@ -23,7 +24,8 @@ class GenreViewModel {
                 self?.genreItems = items ?? []
                 GenreHandler.shared.setItems(items: items ?? [])
                 self?.genreNameList = GenreHandler.shared.getAllGenreTitles(items: self?.genreItems ?? [])
-                print("cemos",self?.genreNameList)
+                self?.genreIdList = GenreHandler.shared.getAllGenreIds(items: self?.genreItems ?? [])
+                print("cemos",self?.genreIdList)
                 self?.successCallback?()
             }
         }

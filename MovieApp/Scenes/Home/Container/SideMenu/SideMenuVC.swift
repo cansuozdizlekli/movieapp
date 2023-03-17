@@ -13,11 +13,13 @@ protocol SideMenuVCDelegate: AnyObject {
 
 class SideMenuVC: UIViewController {
 
-    var chosenGenre = ""
-    
+    var chosenGenreId : Int = 0
+    var chosenGenreName : String = ""
     weak var delegate: SideMenuVCDelegate?
+    
     let viewModel = GenreViewModel()
     var genreNames = [String]()
+    var genreIds = [Int]()
     var movies = [Movie]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -47,6 +49,7 @@ class SideMenuVC: UIViewController {
     
     @objc func didTapMenuButton(){
         didTapMenuButton()
+        
     }
     
     private func viewModelConfiguration(){
@@ -55,8 +58,8 @@ class SideMenuVC: UIViewController {
             print("error",errorMessage)
         }
         viewModel.successCallback = { [weak self] in
-//            print("kac tur varmıss",self?.viewModel.genreNameList.count)
             self?.genreNames = self?.viewModel.genreNameList ?? []
+            self?.genreIds = self?.viewModel.genreIdList ?? []
             self?.tableView.reloadData()
         }
         
@@ -66,7 +69,6 @@ class SideMenuVC: UIViewController {
 extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("kac tur varmıss table view ici",genreNames.count)
         return genreNames.count
     }
     
@@ -77,7 +79,7 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
         
         let genreItem = genreNames[indexPath.row]
         cell.movieGenreLabel.text = genreItem.uppercased()
-        
+
         let backgroundColorView = UIView()
         backgroundColorView.backgroundColor = UIColor.lightestBlue
         cell.selectedBackgroundView = backgroundColorView
@@ -87,14 +89,15 @@ extension SideMenuVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? MovieTypeTableViewCell {
-            print("hangi tür gösterilcek",cell.movieGenreLabel.text!)
-            let vc = ContainerVC()
-            chosenGenre = cell.movieGenreLabel.text!
-            vc.isGenreSelected = true
-            vc.SelectedGenre = cell.movieGenreLabel.text!
-            print("isgenrem",vc.SelectedGenre)
-            delegate?.didTapMenuButton()
             
+            let vc = ContainerVC()
+            chosenGenreId = genreIds[indexPath.row].self
+            chosenGenreName = genreNames[indexPath.row].self
+            vc.isGenreSelected = true
+            vc.SelectedGenreId = genreIds[indexPath.row].self
+            vc.SelectedGenreName = genreNames[indexPath.row].self
+            print("hangi tür gösterilcek",vc.SelectedGenreName)
+//            delegate?.didTapMenuButton()
         }
         
     }
