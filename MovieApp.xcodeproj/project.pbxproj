@@ -98,7 +98,7 @@
 		8DE44BAD2985B5650054826A /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE44BAB2985B5650054826A /* GenreCollectionViewCell.xib */; };
 		8DE683E729C1097D00ECC3FD /* GenreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE683E629C1097D00ECC3FD /* GenreViewModel.swift */; };
 		8DE683EC29C10A3000ECC3FD /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE683EB29C10A3000ECC3FD /* SideMenuManager.swift */; };
-		8DE683EE29C23FD000ECC3FD /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DE683ED29C23FD000ECC3FD /* GoogleService-Info (2).plist */; };
+		8DE683EE29C23FD000ECC3FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DE683ED29C23FD000ECC3FD /* GoogleService-Info.plist */; };
 		8DE683F129C2419A00ECC3FD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F029C2419A00ECC3FD /* FirebaseDatabase */; };
 		8DE683F329C2419A00ECC3FD /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F229C2419A00ECC3FD /* FirebaseDatabaseSwift */; };
 		8DE683F529C2419A00ECC3FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE683F429C2419A00ECC3FD /* FirebaseFirestore */; };
@@ -196,7 +196,7 @@
 		8DE44BAB2985B5650054826A /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DE683E629C1097D00ECC3FD /* GenreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewModel.swift; sourceTree = "<group>"; };
 		8DE683EB29C10A3000ECC3FD /* SideMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
-		8DE683ED29C23FD000ECC3FD /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (2).plist"; sourceTree = "<group>"; };
+		8DE683ED29C23FD000ECC3FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,7 +289,7 @@
 				8D88DBA72944A25C00D29867 /* Main.storyboard */,
 				8D88DBAF2944A25E00D29867 /* LaunchScreen.storyboard */,
 				8D88DBB22944A25E00D29867 /* Info.plist */,
-				8DE683ED29C23FD000ECC3FD /* GoogleService-Info (2).plist */,
+				8DE683ED29C23FD000ECC3FD /* GoogleService-Info.plist */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -694,7 +694,7 @@
 				8DD7ADFB2947DA5700B03570 /* Mulish-ExtraLight.ttf in Resources */,
 				8D88DBA92944A25C00D29867 /* Main.storyboard in Resources */,
 				8DD73767294CAA7C0044DB54 /* MovieDetailViewController.xib in Resources */,
-				8DE683EE29C23FD000ECC3FD /* GoogleService-Info (2).plist in Resources */,
+				8DE683EE29C23FD000ECC3FD /* GoogleService-Info.plist in Resources */,
 				8DD7ADCA2947C7CB00B03570 /* Montserrat-Black.ttf in Resources */,
 				8DD7ADEF2947DA5700B03570 /* Mulish-Medium.ttf in Resources */,
 				8DD7ADD52947C7CB00B03570 /* Montserrat-ThinItalic.ttf in Resources */,
