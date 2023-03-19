@@ -24,7 +24,7 @@ class FirstViewController: UIViewController {
 
 
     @IBAction func signUpButtonClicked(_ sender: Any) {
-        self.presentVC(to: TabBarController())
+        self.presentVC(to: SignUpViewController())
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {

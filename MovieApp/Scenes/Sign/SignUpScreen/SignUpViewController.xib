@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextfield" destination="Huw-TV-md2" id="h9B-i4-Tzy"/>
+                <outlet property="nameTextfield" destination="ke3-qo-IIM" id="t1b-4O-Cho"/>
+                <outlet property="passwordTextfield" destination="z06-74-ZP3" id="nEl-uY-cS2"/>
+                <outlet property="signUpButton" destination="9j4-Tb-0Sd" id="d6r-Fp-4ZU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Huw-TV-md2">
+                    <rect key="frame" x="16" y="397" width="361" height="55"/>
+                    <color key="backgroundColor" name="genrebgcolor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="CJM-4F-OH9"/>
+                    </constraints>
+                    <attributedString key="attributedText"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z06-74-ZP3">
+                    <rect key="frame" x="16" y="482" width="361" height="55"/>
+                    <color key="backgroundColor" name="genrebgcolor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="mRI-H1-d4M"/>
+                    </constraints>
+                    <attributedString key="attributedText"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-Tb-0Sd">
+                    <rect key="frame" x="16" y="684" width="361" height="55"/>
+                    <color key="backgroundColor" name="genretextcolor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="Naq-PY-8ju"/>
+                    </constraints>
+                    <color key="tintColor" name="primaryIndigo"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <attributedString key="attributedTitle">
+                            <fragment content="SIGN UP">
+                                <attributes>
+                                    <font key="NSFont" size="13" name="Helvetica"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="baseForegroundColor" name="genrebgcolor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signUpTapped:" destination="-1" eventType="touchUpInside" id="GAi-1S-e14"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Name and Surname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-qo-IIM">
+                    <rect key="frame" x="16" y="316" width="361" height="55"/>
+                    <color key="backgroundColor" name="genrebgcolor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="g1o-a0-CsU"/>
+                    </constraints>
+                    <attributedString key="attributedText"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHT-9t-kKQ">
+                    <rect key="frame" x="16" y="131" width="361" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="zG8-md-y4h"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                    <color key="textColor" name="titleBlueColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DHT-9t-kKQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="18C-9Z-fyV"/>
+                <constraint firstItem="z06-74-ZP3" firstAttribute="leading" secondItem="9j4-Tb-0Sd" secondAttribute="leading" id="1yX-wN-AFd"/>
+                <constraint firstItem="ke3-qo-IIM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3hX-2E-8ek"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9j4-Tb-0Sd" secondAttribute="bottom" constant="79" id="7hk-Eh-AAu"/>
+                <constraint firstItem="z06-74-ZP3" firstAttribute="top" secondItem="Huw-TV-md2" secondAttribute="bottom" constant="30" id="HKb-EU-IvA"/>
+                <constraint firstItem="Huw-TV-md2" firstAttribute="trailing" secondItem="z06-74-ZP3" secondAttribute="trailing" id="Jzg-ln-ed1"/>
+                <constraint firstItem="ke3-qo-IIM" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="Mx8-RV-Tu3"/>
+                <constraint firstItem="Huw-TV-md2" firstAttribute="leading" secondItem="z06-74-ZP3" secondAttribute="leading" id="SyD-Cd-SjV"/>
+                <constraint firstItem="z06-74-ZP3" firstAttribute="trailing" secondItem="9j4-Tb-0Sd" secondAttribute="trailing" id="aU0-kj-Crs"/>
+                <constraint firstItem="Huw-TV-md2" firstAttribute="top" secondItem="ke3-qo-IIM" secondAttribute="bottom" constant="26" id="kf1-bL-ALL"/>
+                <constraint firstItem="DHT-9t-kKQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="72" id="p2b-Yb-P9w"/>
+                <constraint firstItem="DHT-9t-kKQ" firstAttribute="leading" secondItem="ke3-qo-IIM" secondAttribute="leading" id="q4E-bn-h4f"/>
+                <constraint firstItem="ke3-qo-IIM" firstAttribute="leading" secondItem="Huw-TV-md2" secondAttribute="leading" id="wBb-r0-Man"/>
+                <constraint firstItem="ke3-qo-IIM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="316" id="z1i-PB-AGH"/>
+                <constraint firstItem="ke3-qo-IIM" firstAttribute="trailing" secondItem="Huw-TV-md2" secondAttribute="trailing" id="zrP-Yb-QL7"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="genrebgcolor">
+            <color red="0.86274509803921573" green="0.88627450980392153" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="genretextcolor">
+            <color red="0.53333333333333333" green="0.60392156862745094" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryIndigo">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="titleBlueColor">
+            <color red="0.070588235294117646" green="0.054901960784313725" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -19,6 +19,8 @@
 		8D44823629C78847006E1932 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44823529C78847006E1932 /* UIViewController+Ext.swift */; };
 		8D44823A29C7891F006E1932 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D44823829C7891F006E1932 /* LoginViewController.swift */; };
 		8D44823B29C7891F006E1932 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D44823929C7891F006E1932 /* LoginViewController.xib */; };
+		8D4AED9229C7AD8200D6BCA9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4AED9029C7AD8200D6BCA9 /* SignUpViewController.swift */; };
+		8D4AED9329C7AD8200D6BCA9 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4AED9129C7AD8200D6BCA9 /* SignUpViewController.xib */; };
 		8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DCF29B67EA800DCE72D /* CastModel.swift */; };
 		8D700DD229B7E85800DCE72D /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DD129B7E85800DCE72D /* VideoModel.swift */; };
 		8D88DBA22944A25C00D29867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA12944A25C00D29867 /* AppDelegate.swift */; };
@@ -123,6 +125,8 @@
 		8D44823529C78847006E1932 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		8D44823829C7891F006E1932 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8D44823929C7891F006E1932 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8D4AED9029C7AD8200D6BCA9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8D4AED9129C7AD8200D6BCA9 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		8D700DCF29B67EA800DCE72D /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		8D700DD129B7E85800DCE72D /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8D88DB9E2944A25C00D29867 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +279,15 @@
 				8D44823929C7891F006E1932 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8D4AED8F29C7AD6000D6BCA9 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8D4AED9029C7AD8200D6BCA9 /* SignUpViewController.swift */,
+				8D4AED9129C7AD8200D6BCA9 /* SignUpViewController.xib */,
+			);
+			path = SignUpScreen;
 			sourceTree = "<group>";
 		};
 		8D88DB952944A25C00D29867 = {
@@ -614,6 +627,7 @@
 		8DF4626429C702AA00EB09EA /* Sign */ = {
 			isa = PBXGroup;
 			children = (
+				8D4AED8F29C7AD6000D6BCA9 /* SignUpScreen */,
 				8D44823729C7890A006E1932 /* Login */,
 				8D44823029C72D0C006E1932 /* SignUp */,
 			);
@@ -703,6 +717,7 @@
 				8DD7ADED2947DA5700B03570 /* Mulish-ExtraBold.ttf in Resources */,
 				8DD7ADD42947C7CB00B03570 /* Montserrat-Light.ttf in Resources */,
 				8DD7ADD22947C7CB00B03570 /* Montserrat-MediumItalic.ttf in Resources */,
+				8D4AED9329C7AD8200D6BCA9 /* SignUpViewController.xib in Resources */,
 				8DD7ADF82947DA5700B03570 /* Mulish-SemiBold.ttf in Resources */,
 				8DD7ADD92947C7CB00B03570 /* Montserrat-LightItalic.ttf in Resources */,
 				8DD7AE0A2947DAC500B03570 /* Merriweather-BoldItalic.ttf in Resources */,
@@ -798,6 +813,7 @@
 				8D88DBD62944C09100D29867 /* Icon.swift in Sources */,
 				8D88DBD22944BD0B00D29867 /* SettingsVC.swift in Sources */,
 				8D125D6C2976E5F4001F4CB9 /* HomeHelper.swift in Sources */,
+				8D4AED9229C7AD8200D6BCA9 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

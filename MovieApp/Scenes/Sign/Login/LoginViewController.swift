@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseCore
-//import FirebaseAuth
+//import FirebaseAuthInterop
 
 class LoginViewController: UIViewController {
     
@@ -20,6 +20,30 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    private func validateFeilds(){
+        if emailTextfield.text?.isEmpty == true {
+            print("no text in email textfield")
+            return
+        }
+        if passwordTextfield.text?.isEmpty == true {
+            print("no text in email textfield")
+            return
+        }
+//        login()
+        
+    }
+    
+//    private func login(){
+//        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { [weak self] authResult, err in
+//            guard self != nil else {return}
+//            if let err = err {
+//                print(err.localizedDescription)
+//            }
+//            self!.checkUserInfo()
+//        }
+//    }
 
 
     
