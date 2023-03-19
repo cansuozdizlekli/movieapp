@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="signUpButton" destination="VBa-lC-jdd" id="eDV-hx-WRX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBa-lC-jdd">
+                    <rect key="frame" x="16" y="586" width="361" height="56"/>
+                    <color key="backgroundColor" name="genrebgcolor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="P1v-dA-R6P"/>
+                    </constraints>
+                    <color key="tintColor" name="genretextcolor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <attributedString key="attributedTitle">
+                            <fragment content="SIGN UP">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Helvetica"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signUpButtonClicked:" destination="-1" eventType="touchUpInside" id="R86-ze-q1a"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app logo" translatesAutoresizingMaskIntoConstraints="NO" id="DfU-vF-pBD">
+                    <rect key="frame" x="16" y="79" width="361" height="371"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="361" id="9uF-7N-AKx"/>
+                        <constraint firstAttribute="height" constant="371" id="osk-pe-P5x"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVİE APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiG-e0-ijb">
+                    <rect key="frame" x="16" y="450" width="361" height="25.333333333333314"/>
+                    <color key="tintColor" name="textgray"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="34" id="JnN-Xm-dsQ">
+                    <rect key="frame" x="19" y="650" width="358" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALREADY HAVE AN ACCOUNT?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajH-FS-FAG">
+                            <rect key="frame" x="0.0" y="0.0" width="217.33333333333334" height="31"/>
+                            <color key="tintColor" name="textgray"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" name="textgray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf1-mx-qXg">
+                            <rect key="frame" x="251.33333333333334" y="0.0" width="106.66666666666666" height="31"/>
+                            <color key="tintColor" name="genretextcolor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="LOG IN">
+                                        <attributes>
+                                            <font key="NSFont" size="15" name="Helvetica"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="loginButtonClicked:" destination="-1" eventType="touchUpInside" id="rVs-6h-t8k"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oiG-e0-ijb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="27q-JD-h9D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JnN-Xm-dsQ" secondAttribute="bottom" constant="136.66999999999999" id="6dB-1X-NwQ"/>
+                <constraint firstItem="VBa-lC-jdd" firstAttribute="top" secondItem="oiG-e0-ijb" secondAttribute="bottom" constant="110.67" id="98w-hz-I7f"/>
+                <constraint firstItem="DfU-vF-pBD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="A2D-4i-Pcy"/>
+                <constraint firstItem="oiG-e0-ijb" firstAttribute="top" secondItem="DfU-vF-pBD" secondAttribute="bottom" id="AA7-Xa-dDw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oiG-e0-ijb" secondAttribute="trailing" constant="16" id="Ede-4Q-iB3"/>
+                <constraint firstItem="DfU-vF-pBD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="HCz-EL-sc9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JnN-Xm-dsQ" secondAttribute="trailing" constant="30" id="Hcd-gS-7Jx"/>
+                <constraint firstItem="JnN-Xm-dsQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Kqq-TG-KTo"/>
+                <constraint firstItem="JnN-Xm-dsQ" firstAttribute="top" secondItem="VBa-lC-jdd" secondAttribute="bottom" constant="8" symbolic="YES" id="Scj-we-H1G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DfU-vF-pBD" secondAttribute="trailing" constant="16" id="cAt-hf-k2r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VBa-lC-jdd" secondAttribute="trailing" constant="16" id="cUP-XT-12y"/>
+                <constraint firstItem="oiG-e0-ijb" firstAttribute="top" secondItem="DfU-vF-pBD" secondAttribute="bottom" id="cpO-52-ix4"/>
+                <constraint firstItem="VBa-lC-jdd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="v4h-Gz-eMW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VBa-lC-jdd" secondAttribute="bottom" constant="176" id="z8g-n0-u1G"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="app logo" width="464" height="371"/>
+        <namedColor name="genrebgcolor">
+            <color red="0.86274509803921573" green="0.88627450980392153" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="genretextcolor">
+            <color red="0.53333333333333333" green="0.60392156862745094" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textgray">
+            <color red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
