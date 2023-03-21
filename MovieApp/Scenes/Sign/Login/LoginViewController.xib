@@ -24,25 +24,17 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="tAp-yZ-Wmd">
                     <rect key="frame" x="19" y="338" width="358" height="143"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ze0-Qu-WMH">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ze0-Qu-WMH">
                             <rect key="frame" x="0.0" y="0.0" width="358" height="55"/>
                             <color key="backgroundColor" name="genrebgcolor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="55" id="1vG-UG-aP6"/>
                                 <constraint firstAttribute="width" constant="358" id="zTR-Fh-Lnm"/>
                             </constraints>
-                            <attributedString key="attributedText">
-                                <fragment content="Email Address">
-                                    <attributes>
-                                        <color key="NSColor" name="textfield-text"/>
-                                        <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                            <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="elz-vV-fPr">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="elz-vV-fPr">
                             <rect key="frame" x="0.0" y="88" width="358" height="55"/>
                             <color key="backgroundColor" name="genrebgcolor"/>
                             <constraints>
@@ -81,6 +73,9 @@
                         </attributedString>
                         <color key="baseForegroundColor" name="titleBlueColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="RLc-AT-8Wc"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-9L-v6X">
                     <rect key="frame" x="19" y="143" width="358" height="36"/>

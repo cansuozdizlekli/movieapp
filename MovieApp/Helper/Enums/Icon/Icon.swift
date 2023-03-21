@@ -19,6 +19,9 @@ enum Icons{
     case tabBarSettings
     case tabBarSettingsFill
     case sideMenuIcon
+    case logOutButton
+    case normalHeart
+    case filledHeart
     
     var image: UIImage {
         switch self {
@@ -36,6 +39,12 @@ enum Icons{
             return UIImage(systemName: "gearshape.fill") ?? UIImage()
         case .sideMenuIcon:
             return UIImage(systemName: "list.bullet") ?? UIImage()
+        case .logOutButton:
+            return UIImage(systemName: "arrow.left.to.line") ?? UIImage()
+        case .normalHeart:
+            return UIImage(systemName: "heart") ?? UIImage()
+        case .filledHeart:
+            return UIImage(systemName: "heart.fill") ?? UIImage()
         }
     }
 }

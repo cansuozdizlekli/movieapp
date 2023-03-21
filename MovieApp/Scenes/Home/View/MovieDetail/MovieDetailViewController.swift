@@ -7,6 +7,8 @@
 
 import UIKit
 import YoutubePlayer_in_WKWebView
+import Firebase
+import FirebaseStorage
 
 class MovieDetailViewController: UIViewController {
     
@@ -24,6 +26,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var genreCollectionView: UICollectionView!
     @IBOutlet weak var castCollectionView: UICollectionView!
     
+    @IBOutlet weak var favButton: UIButton!
     
     private let backButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 15, y: 65, width: 50, height: 50))
@@ -59,6 +62,8 @@ class MovieDetailViewController: UIViewController {
         lengthLabel.text = selectedMovie.releaseDate
         languageLabel.text = selectedMovie.originalLanguage
         descriptionLabel.text = selectedMovie.overview
+        favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
         
     }
     
@@ -68,6 +73,10 @@ class MovieDetailViewController: UIViewController {
         
     }
 
+    @IBAction func favButtonTapped(_ sender: Any) {
+        favButton.isSelected.toggle()
+    }
+    
     private func setupCollectionView() {
         castCollectionView.delegate = self
         castCollectionView.dataSource = self

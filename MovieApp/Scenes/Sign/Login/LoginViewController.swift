@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseCore
-//import FirebaseAuthInterop
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -31,19 +31,31 @@ class LoginViewController: UIViewController {
             print("no text in email textfield")
             return
         }
-//        login()
+        login()
         
     }
     
-//    private func login(){
-//        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { [weak self] authResult, err in
-//            guard self != nil else {return}
-//            if let err = err {
-//                print(err.localizedDescription)
-//            }
-//            self!.checkUserInfo()
-//        }
-//    }
+    private func login(){
+        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { [weak self] authResult, err in
+            guard self != nil else {return}
+            if let err = err {
+                print(err.localizedDescription)
+            }
+            self!.checkUserInfo()
+        }
+    }
+    
+    private func checkUserInfo(){
+        if Auth.auth().currentUser != nil {
+//            print(Auth.auth().currentUser?.uid)
+            self.presentVC(to: TabBarController())
+
+        }
+    }
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        validateFeilds()
+    }
 
 
     

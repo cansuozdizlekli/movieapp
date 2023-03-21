@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -24,8 +26,36 @@ class SignUpViewController: UIViewController {
 
 
     @IBAction func signUpTapped(_ sender: Any) {
+        if emailTextfield.text?.isEmpty == true {
+            print("no text in email textfield")
+            return
+        }
         
+        if passwordTextfield.text?.isEmpty == true {
+            print("no text in email textfield")
+            return
+        }
+        
+        signUp()
     }
     
+    
+    func signUp(){
+        Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { authResult, error in
+            guard let user = authResult?.user, error == nil else{
+                print("Error 1 \(String(describing: error?.localizedDescription))")
+                return
+            }
+        }
+        if Auth.auth().currentUser != nil {
+            print("cansu1 yeni sayfa acılıs")
+            let vc = TabBarController()
+            self.presentVC(to: TabBarController())
+        }
+        
+    }
 
+    
+    
+    
 }

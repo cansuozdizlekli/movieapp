@@ -151,11 +151,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.delegate = self
         cell.cellItem = viewModel.movieItems[indexPath.row]
 
-        
-//        let backgroundColorView = UIView()
-//        backgroundColorView.backgroundColor = UIColor.clear
-//        cell.selectedBackgroundView = backgroundColorView
-
         return cell
     }
     

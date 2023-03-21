@@ -14,6 +14,8 @@ protocol HomeManagerProtocol {
 }
 
 class HomeManager : HomeManagerProtocol {
+    
+    
     func getCasts(movieId: Int, complete: @escaping (([CastElement]?, Error?) -> ())) {
         let castUrl = HomeEndpoint.cast.path
         let replaced = castUrl.replacingOccurrences(of: "e//", with: "e/\(String(movieId))/")
@@ -107,6 +109,8 @@ class HomeManager : HomeManagerProtocol {
             }
         }
     }
+    
+    
     
 
     
