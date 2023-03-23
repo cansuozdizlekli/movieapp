@@ -6,15 +6,27 @@
 //
 
 import UIKit
-import FirebaseStorage
+import FirebaseFirestore
 
 class FavouriteVC: UIViewController {
 
-    
+    private var db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    
+    func fetchDataByUserEmail(){
+//        db.collection("Fav Movies").getDocuments { document , error in
+//            if let document = document {
+//                let dataDescription = document.data ?? "nil"
+//                    print("Document data: \(dataDescription)")
+//                } else {
+//                    print("Document does not exist")
+//                }
+//        }
         
     }
 
