@@ -8,6 +8,7 @@
 import UIKit
 import YoutubePlayer_in_WKWebView
 import Firebase
+import FirebaseAuth
 import FirebaseStorage
 
 class MovieDetailViewController: UIViewController {
@@ -47,7 +48,8 @@ class MovieDetailViewController: UIViewController {
         initUI()
         setupCollectionView()
         viewModelConfiguration()
-        editSize()
+        
+        
       
     }
     
@@ -75,6 +77,38 @@ class MovieDetailViewController: UIViewController {
 
     @IBAction func favButtonTapped(_ sender: Any) {
         favButton.isSelected.toggle()
+        if favButton.isSelected {
+            let db = Firestore.firestore()
+            let user = Auth.auth().currentUser
+            if let user = user {
+                print("userım",user.email!)
+                db.collection("Fav Movies").addDocument(data: ["adult" : selectedMovie.adult!,
+                                                               "backdropPath" : selectedMovie.backdropPath!,
+                                                               "genreIDS" : selectedMovie.genreIDS!,
+                                                               "id" : selectedMovie.id!,
+                                                               "originalLanguage" : selectedMovie.originalLanguage!,
+                                                               "originalTitle" : selectedMovie.originalTitle!,
+                                                               "overview" : selectedMovie.overview!,
+                                                               "popularity" : selectedMovie.popularity!,
+                                                               "posterPath" : selectedMovie.posterPath!,
+                                                               "releaseDate" : selectedMovie.releaseDate!,
+                                                               "title" : selectedMovie.title!,
+                                                               "video" : selectedMovie.video!,
+                                                               "voteAverage" : selectedMovie.voteAverage!,
+                                                               "voteCount" : selectedMovie.voteCount!,
+//                                                               "character" : selectedMovie.character!
+                                                               "creditID" : selectedMovie.creditID as Any,
+//                                                               "order" : selectedMovie.order as Any,
+//                                                               "department" : selectedMovie.department,
+//                                                               "job" : selectedMovie.job!,
+                                                               "posterImage" : selectedMovie.posterImage,
+                                                               "ratingText" : selectedMovie.ratingText,
+                                                               "genreItems" : selectedMovie.genreItems,
+                                                               "overViewText" : selectedMovie.overViewText,
+                                                    
+                                                               "UserID": user.email!])
+            }
+        }
     }
     
     private func setupCollectionView() {
@@ -112,24 +146,10 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
-    private func editSize () {
-        if screenHeight > 600 && screenHeight < 800 {
-            
-            print("cansu 700den buyuk")
-        }
-        if screenHeight > 800 && screenHeight < 900  {
-            
-            print(screenHeight)
-            print("800den buyuk")
-        }
-        if screenHeight > 900 {
-            
-            print(screenHeight)
-            print("900den buyuk")
-        }
-
-    }
-
+    
+    
+    
+    
 
 }
 

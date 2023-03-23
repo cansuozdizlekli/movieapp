@@ -23,6 +23,7 @@
 		8D4AED9329C7AD8200D6BCA9 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4AED9129C7AD8200D6BCA9 /* SignUpViewController.xib */; };
 		8D4AED9629C8D68200D6BCA9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4AED9529C8D68200D6BCA9 /* FirebaseAuth */; };
 		8D4AED9929CA2CFF00D6BCA9 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4AED9829CA2CFF00D6BCA9 /* FirebaseService.swift */; };
+		8D4AED9C29CA2F6400D6BCA9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4AED9B29CA2F6400D6BCA9 /* UserModel.swift */; };
 		8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DCF29B67EA800DCE72D /* CastModel.swift */; };
 		8D700DD229B7E85800DCE72D /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D700DD129B7E85800DCE72D /* VideoModel.swift */; };
 		8D88DBA22944A25C00D29867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D88DBA12944A25C00D29867 /* AppDelegate.swift */; };
@@ -130,6 +131,7 @@
 		8D4AED9029C7AD8200D6BCA9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8D4AED9129C7AD8200D6BCA9 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		8D4AED9829CA2CFF00D6BCA9 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		8D4AED9B29CA2F6400D6BCA9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8D700DCF29B67EA800DCE72D /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		8D700DD129B7E85800DCE72D /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		8D88DB9E2944A25C00D29867 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +423,7 @@
 				8D125D72297717E6001F4CB9 /* GenreModel.swift */,
 				8D700DCF29B67EA800DCE72D /* CastModel.swift */,
 				8D700DD129B7E85800DCE72D /* VideoModel.swift */,
+				8D4AED9B29CA2F6400D6BCA9 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				8DD7377B294E79F80044DB54 /* CastCollectionViewCell.swift in Sources */,
 				8D125D73297717E6001F4CB9 /* GenreModel.swift in Sources */,
 				8DB7ED352944E5A400C5B8EA /* Constant.swift in Sources */,
+				8D4AED9C29CA2F6400D6BCA9 /* UserModel.swift in Sources */,
 				8D125D7529771A85001F4CB9 /* HomeViewModel.swift in Sources */,
 				8DB7ED4129460EF400C5B8EA /* MovieModel.swift in Sources */,
 				8D700DD029B67EA800DCE72D /* CastModel.swift in Sources */,

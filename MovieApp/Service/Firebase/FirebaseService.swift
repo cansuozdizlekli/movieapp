@@ -33,4 +33,5 @@ class FIRService {
     func getCurrentUserId() -> String? {
             return Auth.auth().currentUser?.uid
         }
+
 }

@@ -10,7 +10,7 @@ import FirebaseStorage
 
 class FavouriteVC: UIViewController {
 
-    private let storage = Storage.storage().reference()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,11 @@ class FavouriteVC: UIViewController {
         
     }
 
+    
+
+}
+    
 
    
 
-}
+
