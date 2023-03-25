@@ -82,32 +82,33 @@ class MovieDetailViewController: UIViewController {
             let user = Auth.auth().currentUser
             if let user = user {
                 print("userım",user.email!)
-                db.collection("Fav Movies").document(user.email!).setData(["adult" : selectedMovie.adult!,
-                                                                                               "backdropPath" : selectedMovie.backdropPath!,
-                                                                                               "genreIDS" : selectedMovie.genreIDS!,
-                                                                                               "id" : selectedMovie.id!,
-                                                                                               "originalLanguage" : selectedMovie.originalLanguage!,
-                                                                                               "originalTitle" : selectedMovie.originalTitle!,
-                                                                                               "overview" : selectedMovie.overview!,
-                                                                                               "popularity" : selectedMovie.popularity!,
-                                                                                               "posterPath" : selectedMovie.posterPath!,
-                                                                                               "releaseDate" : selectedMovie.releaseDate!,
-                                                                                               "title" : selectedMovie.title!,
-                                                                                               "video" : selectedMovie.video!,
-                                                                                               "voteAverage" : selectedMovie.voteAverage!,
-                                                                                               "voteCount" : selectedMovie.voteCount!,
-                                //                                                               "character" : selectedMovie.character!
-                                                                                               "creditID" : selectedMovie.creditID as Any,
-                                //                                                               "order" : selectedMovie.order as Any,
-                                //                                                               "department" : selectedMovie.department,
-                                //                                                               "job" : selectedMovie.job!,
-                                                                                               "posterImage" : selectedMovie.posterImage,
-                                                                                               "ratingText" : selectedMovie.ratingText,
-                                                                                               "genreItems" : selectedMovie.genreItems,
-                                                                                               "overViewText" : selectedMovie.overViewText,
-                                                                                    
-                                                                                               "UserID": user.email!])
-//                db.collection("Fav Movies").addDocument(data: )
+                db.collection("Favourite Movie List").document("Emails").collection(user.email!).document(selectedMovie.titleText).setData([
+                                                                                      "adult" : selectedMovie.adult!,
+                                                                                      "backdropPath" : selectedMovie.backdropPath!,
+                                                                                      "genreIDS" : selectedMovie.genreIDS!,
+                                                                                      "id" : selectedMovie.id!,
+                                                                                      "originalLanguage" : selectedMovie.originalLanguage!,
+                                                                                      "originalTitle" : selectedMovie.originalTitle!,
+                                                                                      "overview" : selectedMovie.overview!,
+                                                                                      "popularity" : selectedMovie.popularity!,
+                                                                                      "posterPath" : selectedMovie.posterPath!,
+                                                                                      "releaseDate" : selectedMovie.releaseDate!,
+                                                                                      "title" : selectedMovie.title!,
+                                                                                      "video" : selectedMovie.video!,
+                                                                                      "voteAverage" : selectedMovie.voteAverage!,
+                                                                                      "voteCount" : selectedMovie.voteCount!,
+//                                                                                      "character" : selectedMovie.character!
+                                                                                      "creditID" : selectedMovie.creditID as Any,
+//                                                                                      "order" : selectedMovie.order as Any,
+//                                                                                      "department" : selectedMovie.department,
+//                                                                                      "job" : selectedMovie.job!,
+                                                                                      "posterImage" : selectedMovie.posterImage,
+                                                                                      "ratingText" : selectedMovie.ratingText,
+                                                                                      "genreItems" : selectedMovie.genreItems,
+                                                                                      "overViewText" : selectedMovie.overViewText,
+                                                                                      "UserID": user.email!], merge: true)
+                
+                           
             }
         }
     }
